@@ -1,0 +1,29 @@
+{
+  "keyboard": "ferris/0_1",
+  "layout": "LAYOUT_split_3x5_2",
+  "author": "@reezi",
+  "keymap": "fr dev",
+  "version": "0.0.1",
+  "documentation": "qmk compile",
+  "notes": "todo QK_BOOT QK_RBT",
+  "layers": [
+		[
+      "KC_A","KC_Z","KC_E","KC_R","KC_T",    "KC_Y","KC_U","KC_I","KC_O","KC_P",
+      "KC_Q ","KC_S","KC_D","KC_F","KC_G",    "KC_H","KC_J","KC_K","KC_L","KC_M",
+      "KC_W","KC_X","KC_TAB","KC_C","QK_DOT",    "KC_PIPE","KC_V","KC_MINUS","KC_B","KC_N",
+      "MEH(KC_SPC)","MT(OSM(MOD_LALT), MOD_LCTL)",    "MT(QK_LEAD,OSM(MOD_LSFT))","TG(1)"
+    ],
+    [
+      "","","","","",    "","","","","",
+      "","","","","",    "","","","","",
+      "","","","","",    "","","","","",
+      "TG(0)","#####",    "KC_LSFT","TG(2)"
+    ],
+    [
+      "KC_BRID","KC_BRIU","KC_VOLD","KC_VOLU","KC_NO",    "KC_NO","KC_DOLLAR","KC_PERCENT","KC_NO","KC_NO",
+      "","","","","",    "","","","","",
+      "","","","","",    "","","","","",
+      "TG(0)","TG(1)",    "KC_ASTR","KC_NO"
+    ]
+  ]
+}
