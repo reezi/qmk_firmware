@@ -1,5 +1,32 @@
 #include QMK_KEYBOARD_H
+#include "keymap_french.h"
 #include "custom-shift-keys.h"
+
+enum custom_keycodes {
+    CU_PRN = SAFE_RANGE,
+    CU_CBR,
+    CU_BRC,
+};
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+      case CU_PRN:
+        if (record->event.pressed) { // when pressed
+            SEND_STRING("()"SS_TAP(X_LEFT));
+        } else {} // when released
+        break;
+      case CU_CBR:
+        if (record->event.pressed) { // when pressed
+            SEND_STRING("{}"SS_TAP(X_LEFT));
+        } else {} // when released
+        break;
+      case CU_BRC:
+        if (record->event.pressed) { // when pressed
+            SEND_STRING("[]"SS_TAP(X_LEFT));
+        } else {} // when released
+        break;
+    }
+    return true;
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[0] = LAYOUT_split_3x5_2(
