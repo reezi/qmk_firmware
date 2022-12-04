@@ -1,5 +1,5 @@
 #include QMK_KEYBOARD_H
-#include custom-shift-keys.h
+#include "custom-shift-keys.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[0] = LAYOUT_split_3x5_2(
@@ -27,3 +27,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       TG(0), OSM(MOD_LCTL), OSM(MOD_LSFT), KC_NO
   )
 };
+
+const custom_shift_key_t custom_shift_keys[] = {
+  {KC_QUESTION, KC_EXCLAIM}, // shift ? is !
+  {KC_SLASH, KC_BACKSLASH}, // shift / is "\"
+  {KC_DOLLAR, RALT(KC_E)}, // shift $ is €
+  {KC_EQUAL, KC_AMPERSAND}, // shift = is &
+  {KC_RIGHT_ANGLE_BRACKET, KC_LEFT_ANGLE_BRACKET}, // shift < is >
+  {KC_COLON, KC_SEMICOLON}, // shift : is ;
+  {KC_MINUS, KC_UNDERSCORE}, // shift - is _
+  {KC_DOT, KC_COMMA}, // shift . is ,
+  {KC_ASTERISK, KC_PLUS}, // shift * is +
+};
+uint8_t NUM_CUSTOM_SHIFT_KEYS = sizeof(custom_shift_keys) / sizeof(custom_shift_key_t);
