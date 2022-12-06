@@ -3,23 +3,23 @@
 #include "custom-shift-keys.h"
 
 enum custom_keycodes {
-    CU_PRN = SAFE_RANGE,
-    CU_CBR,
-    CU_BRC,
+    C_PRN = SAFE_RANGE,
+    C_CBR,
+    C_BRC,
 };
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-      case CU_PRN:
+      case C_PRN:
         if (record->event.pressed) { // when pressed
             SEND_STRING("()"SS_TAP(X_LEFT));
         } else {} // when released
         break;
-      case CU_CBR:
+      case C_CBR:
         if (record->event.pressed) { // when pressed
             SEND_STRING("{}"SS_TAP(X_LEFT));
         } else {} // when released
         break;
-      case CU_BRC:
+      case C_BRC:
         if (record->event.pressed) { // when pressed
             SEND_STRING("[]"SS_TAP(X_LEFT));
         } else {} // when released
@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       TG(0), KC_NO, KC_NO, KC_NO
   ),
 	[2] = LAYOUT_split_3x5_2(
-      KC_AT, KC_LPRN, KC_LCBR, KC_LBRC, KC_QUESTION, KC_PERCENT, KC_SLASH, KC_DOLLAR, KC_CIRC, KC_EQUAL,
+      KC_AT, C_PRN, C_CBR, C_BRC, KC_QUESTION, KC_PERCENT, KC_SLASH, KC_DOLLAR, KC_CIRC, KC_EQUAL,
       KC_GT, KC_TILDE, KC_QUOTE, KC_DQUO, KC_GRAVE, KC_HASH, KC_COLON, KC_MINUS, KC_DOT, KC_ASTR,
       KC_P0, KC_P1, KC_P2, KC_P3, KC_P4, KC_P5, KC_P6, KC_P7, KC_P8, KC_P9,
       TG(0), KC_PIPE, KC_LSFT, TG(3)
