@@ -1,5 +1,6 @@
 #include QMK_KEYBOARD_H
-//#include "keymap_french.h"
+// https://github.com/qmk/qmk_firmware/blob/master/quantum/keymap_extras/keymap_french.h
+#include "keymap_french.h"
 #include "custom-shift-keys.h"
 
 enum custom_keycodes {
@@ -27,9 +28,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[0] = LAYOUT_split_3x5_2(
-      KC_A, KC_Z, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P,
-      KC_Q , KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_M,
-      KC_W, KC_X, TG(3), KC_C, OSL(1), KC_NO, KC_V, KC_TAB, KC_B, KC_N,
+      FR_A, FR_Z, FR_E, FR_R, FR_T, FR_Y, FR_U, FR_I, FR_O, FR_P,
+      FR_Q , FR_S, FR_D, FR_F, FR_G, FR_H, FR_J, FR_K, FR_L, FR_M,
+      FR_W, FR_X, TG(3), FR_C, OSL(1), KC_NO, FR_V, KC_TAB, FR_B, FR_N,
       MEH_T(KC_SPACE), MT(OSM(MOD_LALT), MOD_LCTL), OSM(MOD_LSFT), TG(2)
   ),
 	[1] = LAYOUT_split_3x5_2(
@@ -39,10 +40,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       TG(0), KC_NO, KC_NO, KC_NO
   ),
 	[2] = LAYOUT_split_3x5_2(
-      KC_AT, C_PRN, C_CBR, C_BRC, KC_QUESTION, KC_PERCENT, KC_SLASH, KC_DOLLAR, KC_CIRC, KC_EQUAL,
-      KC_GT, KC_TILDE, KC_QUOTE, KC_DQUO, KC_GRAVE, KC_HASH, KC_COLON, KC_MINUS, KC_DOT, KC_ASTR,
+      FR_AT, C_PRN, C_CBR, C_BRC, FR_QUES, FR_PERC, FR_SLSH, FR_DLR, FR_CIRC, FR_EQL,
+      FR_RABK, FR_TILD, FR_QUOT, FR_DQUO, FR_GRV, FR_HASH, FR_COLN, FR_MINS, FR_DOT, FR_ASTR,
       KC_P0, KC_P1, KC_P2, KC_P3, KC_P4, KC_P5, KC_P6, KC_P7, KC_P8, KC_P9,
-      TG(0), KC_PIPE, KC_LSFT, TG(3)
+      TG(0), FR_PIPE, KC_LSFT, TG(3)
   ),
 	[3] = LAYOUT_split_3x5_2(
       KC_VOLD, KC_VOLU, KC_BRID, KC_BRIU, KC_NO, KC_NO, KC_DOLLAR, KC_PERCENT, QK_REBOOT, QK_BOOTLOADER,
@@ -53,14 +54,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 const custom_shift_key_t custom_shift_keys[] = {
-  {KC_QUESTION, KC_EXCLAIM}, // shift ? is !
-  {KC_SLASH, KC_BACKSLASH}, // shift / is "\"
-  {KC_DOLLAR, RALT(KC_E)}, // shift $ is €
-  {KC_EQUAL, KC_AMPERSAND}, // shift = is &
-  {KC_RIGHT_ANGLE_BRACKET, KC_LEFT_ANGLE_BRACKET}, // shift < is >
-  {KC_COLON, KC_SEMICOLON}, // shift : is ;
-  {KC_MINUS, KC_UNDERSCORE}, // shift - is _
-  {KC_DOT, KC_COMMA}, // shift . is ,
-  {KC_ASTERISK, KC_PLUS}, // shift * is +
+  {FR_QUES, FR_EXCL}, // shift ? is !
+  {FR_SLSH, FR_BLSH}, // shift / is "\"
+  {FR_DLR, FR_EURO}, // shift $ is €
+  {FR_EQL, FR_AMPR}, // shift = is &
+  {FR_LABK, FR_RABK}, // shift < is >
+  {FR_COLN, FR_SCLN}, // shift : is ;
+  {FR_MINS, FR_UNDS}, // shift - is _
+  {FR_DOT, FR_COMM}, // shift . is ,
+  {FR_ASTR, FR_PLUS}, // shift * is +
 };
 uint8_t NUM_CUSTOM_SHIFT_KEYS = sizeof(custom_shift_keys) / sizeof(custom_shift_key_t);
