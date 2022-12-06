@@ -54,8 +54,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 const custom_shift_key_t custom_shift_keys[] = {
-  {FR_QUES, FR_EXCL}, // shift ? is !
-  {FR_SLSH, FR_BLSH}, // shift / is "\"
+  {FR_QUES, FR_EXLM}, // shift ? is !
+  {FR_SLSH, FR_BSLS}, // shift / is "\"
   {FR_DLR, FR_EURO}, // shift $ is €
   {FR_EQL, FR_AMPR}, // shift = is &
   {FR_LABK, FR_RABK}, // shift < is >
