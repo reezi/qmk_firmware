@@ -10,19 +10,16 @@ enum custom_keycodes {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
       case C_PRN:
-        if (record->event.pressed) { // when pressed
-            SEND_STRING("()"SS_TAP(X_LEFT));
-        } else {} // when released
+        if (record->event.pressed) { SEND_STRING("()"SS_TAP(X_LEFT)); } // when pressed
+        else {} // when released
         break;
       case C_CBR:
-        if (record->event.pressed) { // when pressed
-            SEND_STRING("{}"SS_TAP(X_LEFT));
-        } else {} // when released
+        if (record->event.pressed) { SEND_STRING("{}"SS_TAP(X_LEFT)); } // when pressed
+        else {} // when released
         break;
       case C_BRC:
-        if (record->event.pressed) { // when pressed
-            SEND_STRING("[]"SS_TAP(X_LEFT));
-        } else {} // when released
+        if (record->event.pressed) { SEND_STRING("[]"SS_TAP(X_LEFT)); } // when pressed
+        else {} // when released
         break;
     }
     return true;
