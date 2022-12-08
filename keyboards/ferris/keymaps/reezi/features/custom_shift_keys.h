@@ -1,4 +1,3 @@
-// https://getreuer.info/posts/keyboards/custom-shift-keys/index.html
 // Copyright 2021 Google LLC.
 // SPDX-License-Identifier: Apache-2.0
 

@@ -1,29 +1,16 @@
 #include QMK_KEYBOARD_H
+
 // https://github.com/qmk/qmk_firmware/blob/master/quantum/keymap_extras/keymap_french.h
 #include "keymap_french.h"
-#include "custom-shift-keys.h"
 
+// https://getreuer.info/posts/keyboards/custom-shift-keys/index.html
+#include "features/custom_shift_keys.h"
+
+// custom keycodes for qmk macro
 enum custom_keycodes {
     C_PRN = SAFE_RANGE,
     C_CBR,
     C_BRC,
-};
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-      case C_PRN:
-        if (record->event.pressed) { SEND_STRING("()"SS_TAP(X_LEFT)); } // when pressed
-        else {} // when released
-        break;
-      case C_CBR:
-        if (record->event.pressed) { SEND_STRING("{}"SS_TAP(X_LEFT)); } // when pressed
-        else {} // when released
-        break;
-      case C_BRC:
-        if (record->event.pressed) { SEND_STRING("[]"SS_TAP(X_LEFT)); } // when pressed
-        else {} // when released
-        break;
-    }
-    return true;
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -65,3 +52,24 @@ const custom_shift_key_t custom_shift_keys[] = {
   {FR_ASTR, FR_PLUS}, // shift * is +
 };
 uint8_t NUM_CUSTOM_SHIFT_KEYS = sizeof(custom_shift_keys) / sizeof(custom_shift_key_t);
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (!process_custom_shift_keys(keycode, record)) { return false; }
+    switch (keycode) {
+      // if is on key down
+      // else is on key up
+      case C_PRN:
+        if (record->event.pressed) { SEND_STRING("()"SS_TAP(X_LEFT)); }
+        else {}
+        break;
+      case C_CBR:
+        if (record->event.pressed) { SEND_STRING("{}"SS_TAP(X_LEFT)); }
+        else {}
+        break;
+      case C_BRC:
+        if (record->event.pressed) { SEND_STRING("[]"SS_TAP(X_LEFT)); }
+        else {}
+        break;
+    }
+    return true;
+};
