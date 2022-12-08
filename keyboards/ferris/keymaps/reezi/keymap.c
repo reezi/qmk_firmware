@@ -8,6 +8,24 @@ enum custom_keycodes {
     C_BRC,
 };
 
+// custom X(keycodes) for qmk unicode map
+enum unicode_names {
+    TILDE,
+    CEDIL,
+    CIRCU,
+    DIAER,
+    ACUTE,
+    GRAVE
+};
+const uint32_t PROGMEM unicode_map[] = {
+    [GRAVE] = 0x0300,
+    [ACUTE] = 0x0301,
+    [CIRCU] = 0x0302,
+    [TILDE] = 0x0303,
+    [DIAER] = 0x0308,
+    [CEDIL] = 0x0327
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[0] = LAYOUT_split_3x5_2(
       FR_A, FR_Z, FR_E, FR_R, FR_T, FR_Y, FR_U, FR_I, FR_O, FR_P,
@@ -17,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 	[1] = LAYOUT_split_3x5_2(
       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-      UC(0xCC83), UC(0xCCA7), UC(0xCC82), UC(0xCC88), KC_NO, KC_NO, UC(0xCC81), UC(0xCC80), KC_NO, KC_NO,
+      X(TILDE), X(CEDILL), X(CIRCU), X(DIAER), KC_NO, KC_NO, X(ACUTE), X(GRAVE), KC_NO, KC_NO,
       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
       TO(0), KC_NO, KC_NO, KC_NO
   ),

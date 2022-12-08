@@ -6,5 +6,5 @@
 #include "keymap_french.h"
 #include "sendstring_french.h"
 
-// https://getreuer.info/posts/keyboards/custom-shift-keys/index.html
-#include "features/custom_shift_keys.h"
+// https://docs.qmk.fm/#/feature_unicode
+#define UNICODE_SELECTED_MODES UNICODE_MODE_LINUX
