@@ -40,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       TO(0), KC_NO, KC_NO, KC_NO
   ),
 	[2] = LAYOUT_split_3x5_2(
-      FR_AT, C_PRN, C_CBR, C_BRC, FR_QUES, FR_PERC, FR_SLSH, FR_DLR, FR_CIRC, FR_EQL,
+      FR_AT, C_PRN, C_CBR, C_BRC, FR_EXLM, FR_PERC, FR_SLSH, FR_DLR, FR_CIRC, FR_EQL,
       FR_RABK, FR_TILD, FR_QUOT, FR_DQUO, FR_GRV, FR_HASH, FR_COLN, FR_MINS, FR_DOT, FR_ASTR,
       KC_P1, KC_P2, KC_P3, KC_P4, KC_P5, KC_P6, KC_P7, KC_P8, KC_P9, KC_P0,
       TO(0), FR_PIPE, KC_LSFT, TO(3)
@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 const custom_shift_key_t custom_shift_keys[] = {
-  {FR_QUES, FR_EXLM}, // shift ? is !
+  {FR_EXLM, FR_QUES}, // shift ? is !
   {FR_SLSH, FR_BSLS}, // shift / is "\"
   {FR_DLR, FR_EURO}, // shift $ is €
   {FR_EQL, FR_AMPR}, // shift = is &
