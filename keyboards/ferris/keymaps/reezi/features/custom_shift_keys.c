@@ -1,7 +1,7 @@
 // Copyright 2021-2022 Google LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-#include "custom-shift-keys.h"
+#include "custom_shift_keys.h"
 
 bool process_custom_shift_keys(uint16_t keycode, keyrecord_t *record) {
   static uint16_t registered_keycode = KC_NO;
