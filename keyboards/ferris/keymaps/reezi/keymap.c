@@ -34,14 +34,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_ABC] = LAYOUT_split_3x5_2(
       FR_A, FR_Z, FR_E, FR_R, FR_T, FR_Y, FR_U, FR_I, FR_O, FR_P,
       FR_Q , FR_S, FR_D, FR_F, FR_G, FR_H, FR_J, FR_K, FR_L, FR_M,
-      FR_W, FR_X, TO(_SYS), FR_C, OSL(_ACC), KC_NO, FR_V, KC_TAB, FR_B, FR_N,
+      FR_W, FR_X, TO(_SYS), FR_C, OSL(_ACC), _______, FR_V, KC_TAB, FR_B, FR_N,
       MEH_T(KC_SPACE), MT(OSM(MOD_LALT), MOD_LCTL), OSM(MOD_LSFT), TO(_SYM)
   ),
 	[_ACC] = LAYOUT_split_3x5_2(
-      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-      X(TILDE), X(CEDIL), X(CIRCU), X(DIAER), KC_NO, KC_NO, X(ACUTE), X(GRAVE), KC_NO, KC_NO,
-      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-      TO(_ABC), KC_NO, KC_NO, KC_NO
+      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+      X(TILDE), X(CEDIL), X(CIRCU), X(DIAER), _______, _______, X(ACUTE), X(GRAVE), _______, _______,
+      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+      TO(_ABC), _______, _______, _______
   ),
 	[_SYM] = LAYOUT_split_3x5_2(
       FR_AT, C_PRN, C_CBR, C_BRC, FR_EXLM, FR_PERC, FR_SLSH, FR_DLR, FR_CIRC, FR_EQL,
@@ -50,10 +50,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       TO(_ABC), FR_PIPE, KC_LSFT, TO(_SYS)
   ),
 	[_SYS] = LAYOUT_split_3x5_2(
-      KC_VOLD, KC_VOLU, KC_BRID, KC_BRIU, KC_NO, KC_NO, KC_NO, KC_NO, QK_REBOOT, QK_BOOTLOADER,
-      KC_NO, KC_ESC, KC_HOME, KC_END, KC_NO, KC_NO, KC_BSPC, KC_ENTER, KC_NO, KC_NO,
-      KC_NO, KC_NO, KC_PGUP, KC_PGDN, KC_NO, KC_NO, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
-      TO(_ABC), OSM(MOD_LCTL), OSM(MOD_LSFT), KC_NO
+      KC_VOLD, KC_VOLU, KC_BRID, KC_BRIU, _______, _______, _______, _______, QK_REBOOT, QK_BOOTLOADER,
+      _______, KC_ESC, KC_HOME, KC_END, _______, _______, KC_BSPC, KC_ENTER, _______, _______,
+      _______, _______, KC_PGUP, KC_PGDN, _______, _______, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
+      TO(_ABC), OSM(MOD_LCTL), OSM(MOD_LSFT), _______
   )
 };
 
