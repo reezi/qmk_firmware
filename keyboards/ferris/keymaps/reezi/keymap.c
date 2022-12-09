@@ -26,30 +26,34 @@ const uint32_t PROGMEM unicode_map[] = {
     [CEDIL] = 0x0327
 };
 
+#define _ABC 0
+#define _ACC 1
+#define _SYM 2
+#define _SYS 3
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-	[0] = LAYOUT_split_3x5_2(
+	[_ABC] = LAYOUT_split_3x5_2(
       FR_A, FR_Z, FR_E, FR_R, FR_T, FR_Y, FR_U, FR_I, FR_O, FR_P,
       FR_Q , FR_S, FR_D, FR_F, FR_G, FR_H, FR_J, FR_K, FR_L, FR_M,
-      FR_W, FR_X, TO(3), FR_C, OSL(1), KC_NO, FR_V, KC_TAB, FR_B, FR_N,
-      MEH_T(KC_SPACE), MT(OSM(MOD_LALT), MOD_LCTL), OSM(MOD_LSFT), TO(2)
+      FR_W, FR_X, TO(_SYS), FR_C, OSL(_ACC), KC_NO, FR_V, KC_TAB, FR_B, FR_N,
+      MEH_T(KC_SPACE), MT(OSM(MOD_LALT), MOD_LCTL), OSM(MOD_LSFT), TO(_SYM)
   ),
-	[1] = LAYOUT_split_3x5_2(
+	[_ACC] = LAYOUT_split_3x5_2(
       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
       X(TILDE), X(CEDIL), X(CIRCU), X(DIAER), KC_NO, KC_NO, X(ACUTE), X(GRAVE), KC_NO, KC_NO,
       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-      TO(0), KC_NO, KC_NO, KC_NO
+      TO(_ABC), KC_NO, KC_NO, KC_NO
   ),
-	[2] = LAYOUT_split_3x5_2(
+	[_SYM] = LAYOUT_split_3x5_2(
       FR_AT, C_PRN, C_CBR, C_BRC, FR_EXLM, FR_PERC, FR_SLSH, FR_DLR, FR_CIRC, FR_EQL,
       FR_RABK, FR_TILD, FR_QUOT, FR_DQUO, FR_GRV, FR_HASH, FR_COLN, FR_MINS, FR_DOT, FR_ASTR,
       KC_P1, KC_P2, KC_P3, KC_P4, KC_P5, KC_P6, KC_P7, KC_P8, KC_P9, KC_P0,
-      TO(0), FR_PIPE, KC_LSFT, TO(3)
+      TO(_ABC), FR_PIPE, KC_LSFT, TO(_SYS)
   ),
-	[3] = LAYOUT_split_3x5_2(
+	[_SYS] = LAYOUT_split_3x5_2(
       KC_VOLD, KC_VOLU, KC_BRID, KC_BRIU, KC_NO, KC_NO, KC_NO, KC_NO, QK_REBOOT, QK_BOOTLOADER,
       KC_NO, KC_ESC, KC_HOME, KC_END, KC_NO, KC_NO, KC_BSPC, KC_ENTER, KC_NO, KC_NO,
       KC_NO, KC_NO, KC_PGUP, KC_PGDN, KC_NO, KC_NO, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
-      TO(0), OSM(MOD_LCTL), OSM(MOD_LSFT), KC_NO
+      TO(_ABC), OSM(MOD_LCTL), OSM(MOD_LSFT), KC_NO
   )
 };
 
