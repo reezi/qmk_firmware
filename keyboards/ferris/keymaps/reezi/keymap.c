@@ -1,4 +1,9 @@
-#include "config.h"
+// https://github.com/qmk/qmk_firmware/issues/10005
+// includes are done here because of #pragma once
+
+#include QMK_KEYBOARD_H
+#include "sendstring_french.h" // https://docs.qmk.fm/#/feature_macros?id=alternative-keymaps
+#include "features/custom_shift_keys.h" // https://getreuer.info/posts/keyboards/custom-shift-keys/index.html
 
 // custom keycodes for qmk macro
 enum custom_keycodes {
