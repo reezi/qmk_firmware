@@ -1,4 +1,4 @@
-// includes are done here because https://github.com/qmk/qmk_firmware/issues/10005
+// includes are done here due to https://github.com/qmk/qmk_firmware/issues/10005
 #include QMK_KEYBOARD_H
 #include "sendstring_french.h" // https://docs.qmk.fm/#/feature_macros?id=alternative-keymaps
 #include "features/custom_shift_keys.h" // https://getreuer.info/posts/keyboards/custom-shift-keys/index.html
