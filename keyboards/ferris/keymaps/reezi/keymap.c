@@ -101,13 +101,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         else if (record->event.pressed) { SEND_STRING("()" SS_TAP(X_LEFT)); } // hold
         break;
       case C_TILD:
-        if (record->event.pressed) { SEND_STRING("~"); }
+        if (record->event.pressed) { SEND_STRING("~" SS_TAP(X_BSPC)); }
         break;
       case C_BQUO:
-        if (record->event.pressed) { SEND_STRING("`"); }
+        if (record->event.pressed) { SEND_STRING("`" SS_TAP(X_BSPC)); }
         break;
       case C_CIRC:
-        if (record->event.pressed) { SEND_STRING("^"); }
+        if (record->event.pressed) { SEND_STRING("^" SS_TAP(X_BSPC)); }
         break;
     }
     return true;
