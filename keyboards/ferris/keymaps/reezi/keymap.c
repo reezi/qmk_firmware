@@ -36,8 +36,8 @@ enum custom_keycodes {
 
 #define _ABC 0
 #define _EEE 1
-#define _SYM 2
-#define _SYS 3
+#define _SYS 2
+#define _SYM 3
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_ABC] = LAYOUT_split_3x5_2(
       FR_A, FR_Z, FR_E, FR_R, FR_T, FR_Y, FR_U, FR_I, FR_O, FR_P,
@@ -50,8 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, FR_AGRV, FR_EACU, FR_EGRV, _______, _______, FR_CIRC, FR_DIAE, FR_CCED, _______,
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
       TO(_ABC), _______, _______, _______
-  )
-,
+  ),
 	[_SYS] = LAYOUT_split_3x5_2(
       KC_BRID, KC_BRIU, KC_VOLD, KC_VOLU, _______, _______, KC_PGUP, KC_PGDN, C_FLASH, QK_BOOTLOADER,
       _______, KC_ESC, KC_HOME, KC_END, _______, KC_DEL, KC_BSPC, KC_ENTER, C_SWEET, _______,
@@ -76,6 +75,9 @@ const custom_shift_key_t custom_shift_keys[] = {
   {FR_MINS, FR_UNDS}, // shift - is _
   {FR_DOT, FR_COMM}, // shift . is ,
   {FR_ASTR, FR_PLUS}, // shift * is +
+  {C_CYBR, FR_RCBR}, // shift { is }
+  {C_NMBR, FR_RBRC}, // shift [ is ]
+  {C_PARE, FR_RPRN} // shift ( is )
 };
 uint8_t NUM_CUSTOM_SHIFT_KEYS = sizeof(custom_shift_keys) / sizeof(custom_shift_key_t);
 
