@@ -58,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       TO(_ABC), OSM(MOD_LCTL), KC_LSFT, TO(_SYM)
   ),
 	[_SYM] = LAYOUT_split_3x5_2(
-      FR_AT, C_PARE, C_CYBR, C_NMBR, FR_EXLM, FR_PERC, FR_SLSH, FR_DLR, C_CIRC, FR_EQL,
+      FR_AT, LT(0,C_PARE), LT(0,C_CYBR), LT(0,C_NMBR), FR_EXLM, FR_PERC, FR_SLSH, FR_DLR, C_CIRC, FR_EQL,
       FR_RABK, C_TILD, FR_QUOT, FR_DQUO, C_BQUO, FR_HASH, FR_COLN, FR_MINS, FR_DOT, FR_ASTR,
       KC_P1, KC_P2, KC_P3, KC_P4, KC_P5, KC_P6, KC_P7, KC_P8, KC_P9, KC_P0,
       TO(_ABC), FR_PIPE, OSM(MOD_LSFT), TO(_SYS)
@@ -75,9 +75,9 @@ const custom_shift_key_t custom_shift_keys[] = {
   {FR_MINS, FR_UNDS}, // shift - is _
   {FR_DOT, FR_COMM}, // shift . is ,
   {FR_ASTR, FR_PLUS}, // shift * is +
-  {C_CYBR, FR_RCBR}, // shift { is }
-  {C_NMBR, FR_RBRC}, // shift [ is ]
-  {C_PARE, FR_RPRN} // shift ( is )
+  {LT(0,C_CYBR), FR_RCBR}, // shift { is }
+  {LT(0,C_NMBR), FR_RBRC}, // shift [ is ]
+  {LT(0,C_PARE), FR_RPRN} // shift ( is )
 };
 uint8_t NUM_CUSTOM_SHIFT_KEYS = sizeof(custom_shift_keys) / sizeof(custom_shift_key_t);
 
@@ -88,14 +88,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       case C_FLASH:
         if (record->event.pressed) { SEND_STRING("qmk flash" SS_TAP(X_ENTER)); }
         break;
-      case C_CYBR:
-        if (record->event.pressed) { SEND_STRING("{}" SS_TAP(X_LEFT)); }
+      case LT(0,C_CYBR):
+        if (record->event.pressed && record->tap.count) { SEND_STRING("{"); } // tap
+        else if (record->event.pressed) { SEND_STRING("{}" SS_TAP(X_LEFT)); } // hold
         break;
-      case C_NMBR:
-        if (record->event.pressed) { SEND_STRING("[]" SS_TAP(X_LEFT)); }
+      case LT(0,C_NMBR):
+        if (record->event.pressed && record->tap.count) { SEND_STRING("["); } // tap
+        else if (record->event.pressed) { SEND_STRING("[]" SS_TAP(X_LEFT)); } // hold
         break;
-      case C_PARE:
-        if (record->event.pressed) { SEND_STRING("()" SS_TAP(X_LEFT)); }
+      case LT(0,C_PARE):
+        if (record->event.pressed && record->tap.count) { SEND_STRING("("); } // tap
+        else if (record->event.pressed) { SEND_STRING("()" SS_TAP(X_LEFT)); } // hold
         break;
       case C_TILD:
         if (record->event.pressed) { SEND_STRING("~"); }
