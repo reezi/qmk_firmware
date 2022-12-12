@@ -45,10 +45,10 @@ enum custom_keycodes {
 #define _SYM 3
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_ABC] = LAYOUT_split_3x5_2(
-      FR_A, FR_Z, FR_E, FR_R, FR_T, FR_Y, FR_U, FR_I, FR_O, FR_P,
-      FR_Q , FR_S, FR_D, FR_F, FR_G, FR_H, FR_J, FR_K, FR_L, FR_M,
-      FR_W, FR_X, _______, FR_C, _______, _______, FR_V, _______, FR_B, FR_N,
-      MEH_T(KC_SPACE), OSL(_EEE), OSM(MOD_LSFT), TO(_SYS)
+      FR_B, FR_Y, FR_O, FR_U, FR_Q, _______, FR_L, FR_D, FR_W, FR_V,
+      FR_C, FR_I, FR_E, FR_A, FR_Z, _______, FR_H, FR_T, FR_S, FR_N,
+      FR_G, FR_X, FR_J, FR_K, OSL(_EEE), _______, FR_R, FR_M, FR_F, FR_P,
+      MEH_T(KC_SPACE), _______, OSM(MOD_LSFT), TO(_SYS)
   ),
 	[_EEE] = LAYOUT_split_3x5_2(
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
