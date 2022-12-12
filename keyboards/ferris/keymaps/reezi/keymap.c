@@ -3,15 +3,19 @@
 #include "sendstring_french.h" // https://docs.qmk.fm/#/feature_macros?id=alternative-keymaps
 #include "features/custom_shift_keys.h" // https://getreuer.info/posts/keyboards/custom-shift-keys/index.html
 
-# define C_SWEET KC_F24
+#define SS SEND_STRING
+#define C_SWEET KC_F24
 
 // custom C_ keycodes for qmk macro
 enum custom_keycodes {
     C_FLASH = SAFE_RANGE,
+    C_ANBR,
     C_CYBR,
     C_NMBR,
     C_PARE,
     C_TILD,
+    C_SQUO,
+    C_DQUO,
     C_BQUO,
     C_CIRC
 };
@@ -59,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 	[_SYM] = LAYOUT_split_3x5_2(
       FR_AT, LT(0,C_PARE), LT(0,C_CYBR), LT(0,C_NMBR), FR_EXLM, FR_PERC, FR_SLSH, FR_DLR, C_CIRC, FR_EQL,
-      FR_RABK, C_TILD, FR_QUOT, FR_DQUO, C_BQUO, FR_HASH, FR_COLN, FR_MINS, FR_DOT, FR_ASTR,
+      LT(0,C_ANBR), LT(0,C_TILD), LT(0,C_SQUO), LT(0,C_DQUO), LT(0,C_BQUO), FR_HASH, FR_COLN, FR_MINS, FR_DOT, FR_ASTR,
       KC_P1, KC_P2, KC_P3, KC_P4, KC_P5, KC_P6, KC_P7, KC_P8, KC_P9, KC_P0,
       TO(_ABC), FR_PIPE, OSM(MOD_LSFT), TO(_SYS)
   )
@@ -70,7 +74,7 @@ const custom_shift_key_t custom_shift_keys[] = {
   {FR_SLSH, FR_BSLS}, // shift / is "\"
   {FR_DLR, FR_EURO}, // shift $ is €
   {FR_EQL, FR_AMPR}, // shift = is &
-  {FR_LABK, FR_RABK}, // shift < is >
+  {LT(0,C_ANBR), FR_RABK}, // shift < is >
   {FR_COLN, FR_SCLN}, // shift : is ;
   {FR_MINS, FR_UNDS}, // shift - is _
   {FR_DOT, FR_COMM}, // shift . is ,
@@ -86,28 +90,53 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
       // if is on key down -- else is on key up
       case C_FLASH:
-        if (record->event.pressed) { SEND_STRING("qmk flash" SS_TAP(X_ENTER)); }
+        if (record->event.pressed) { SS("qmk flash" SS_TAP(X_ENTER)); return false; }
+        break;
+      case LT(0,C_ANBR):
+        if (record->event.pressed && record->tap.count) { SS("<"); return false; } // tap
+        else if (record->event.pressed) { SS("<>" SS_TAP(X_LEFT)); return false; } // hold
         break;
       case LT(0,C_CYBR):
-        if (record->event.pressed && record->tap.count) { SEND_STRING("{"); } // tap
-        else if (record->event.pressed) { SEND_STRING("{}" SS_TAP(X_LEFT)); } // hold
+        if (record->event.pressed && record->tap.count) { SS("{"); return false; } // tap
+        else if (record->event.pressed) { SS("{}" SS_TAP(X_LEFT)); return false; } // hold
         break;
       case LT(0,C_NMBR):
-        if (record->event.pressed && record->tap.count) { SEND_STRING("["); } // tap
-        else if (record->event.pressed) { SEND_STRING("[]" SS_TAP(X_LEFT)); } // hold
+        if (record->event.pressed && record->tap.count) { SS("["); return false; } // tap
+        else if (record->event.pressed) { SS("[]" SS_TAP(X_LEFT)); return false; } // hold
         break;
       case LT(0,C_PARE):
-        if (record->event.pressed && record->tap.count) { SEND_STRING("("); } // tap
-        else if (record->event.pressed) { SEND_STRING("()" SS_TAP(X_LEFT)); } // hold
+        if (record->event.pressed && record->tap.count) { SS("("); return false; } // tap
+        else if (record->event.pressed) { SS("()" SS_TAP(X_LEFT)); return false; } // hold
         break;
-      case C_TILD:
-        if (record->event.pressed) { SEND_STRING("~" SS_TAP(X_BSPC)); }
+      case LT(0,C_TILD): // dead
+        if (record->event.pressed && record->tap.count) { tap_code16(FR_TILD); return false; } // tap
+        else if (record->event.pressed) { tap_code16(FR_TILD); tap_code16(FR_SLSH); return false; } // hold
         break;
-      case C_BQUO:
-        if (record->event.pressed) { SEND_STRING("`" SS_TAP(X_BSPC)); }
+      case LT(0,C_SQUO):
+        if (record->event.pressed && record->tap.count) { SS("'"); return false; } // tap
+        else if (record->event.pressed) { SS("''" SS_TAP(X_LEFT)); return false; } // hold
         break;
-      case C_CIRC:
-        if (record->event.pressed) { SEND_STRING("^" SS_TAP(X_BSPC)); }
+      case LT(0,C_DQUO):
+        if (record->event.pressed && record->tap.count) { SS("\""); return false; } // tap
+        else if (record->event.pressed) { SS("\"\"" SS_TAP(X_LEFT)); return false; } // hold
+        break;
+      case LT(0,C_BQUO): // dead
+        if (record->event.pressed && record->tap.count) { tap_code16(FR_GRV); return false; } // tap
+        else if (record->event.pressed) { // hold
+          tap_code16(FR_GRV);
+          tap_code16(FR_GRV);
+          tap_code16(FR_GRV);
+          tap_code16(KC_ENTER);
+          tap_code16(FR_GRV);
+          tap_code16(FR_GRV);
+          tap_code16(FR_GRV);
+          tap_code16(KC_UP);
+          tap_code16(KC_END);
+          return false;
+        }
+        break;
+      case C_CIRC: // dead
+        if (record->event.pressed) { tap_code16(FR_CIRC); tap_code16(KC_SPC); return false; }
         break;
     }
     return true;
