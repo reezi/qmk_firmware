@@ -1,8 +1,9 @@
 // includes are done here due to https://github.com/qmk/qmk_firmware/issues/10005
 #include QMK_KEYBOARD_H
-#include "sendstring_french.h" // https://docs.qmk.fm/#/feature_macros?id=alternative-keymaps
+#include "sendstring_french.h" // qmk alternative keymaps
 #include "features/custom_shift_keys.h" // https://getreuer.info/posts/keyboards/custom-shift-keys/index.html
 
+// custom aliases
 #define SS SEND_STRING
 #define C_SWEET KC_F24
 
