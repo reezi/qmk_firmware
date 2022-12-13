@@ -3,11 +3,11 @@
 #include "sendstring_french.h" // qmk alternative keymaps
 #include "features/custom_shift_keys.h" // https://getreuer.info/posts/keyboards/custom-shift-keys/index.html
 
-// custom aliases
+// aliases
 #define SS SEND_STRING
 #define C_SWEET KC_F24
 
-// custom C_ keycodes for qmk macro
+// C_ keycodes for qmk macro
 enum custom_keycodes {
     C_FLASH = SAFE_RANGE,
     C_ANBR,
@@ -21,7 +21,7 @@ enum custom_keycodes {
     C_CIRC
 };
 
-// custom X(keycodes) for qmk unicode map
+// X(keycodes) for qmk unicode map
 //enum unicode_names {
 //    TILDE,
 //    CEDIL,
