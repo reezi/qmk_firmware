@@ -24,9 +24,9 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_ABC] = LAYOUT_split_3x5_2(
-      FR_B, FR_Y, FR_O, FR_U, FR_Q, _______, FR_L, FR_D, FR_W, FR_V,
-      FR_C, FR_I, FR_E, FR_A, FR_Z, _______, FR_H, FR_T, FR_S, FR_N,
-      FR_G, FR_X, FR_J, FR_K, ____, _______, FR_R, FR_M, FR_F, FR_P,
+      FR_B, FR_Y, FR_O, FR_U, _______, _______, FR_L, FR_D, FR_W, FR_V,
+      FR_C, FR_I, FR_E, FR_A, _______, _______, FR_H, FR_T, FR_S, FR_N,
+      FR_G, FR_X, FR_J, FR_K, _______, _______, FR_R, FR_M, FR_F, FR_P,
       MEH_T(KC_SPACE), _______, OSM(MOD_LSFT), TO(_SYS)
   ),
 	[_EEE] = LAYOUT_split_3x5_2(
@@ -37,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 	[_SYS] = LAYOUT_split_3x5_2(
       KC_BRID, KC_BRIU, KC_VOLD, KC_VOLU, _______, _______, KC_PGUP, KC_PGDN, C_FLASH, QK_BOOTLOADER,
-      _______, KC_ESC, KC_HOME, KC_END, _______, KC_DEL, KC_BSPC, KC_ENTER, C_SWEET, _______,
+      KC_ESC, KC_ENTER, KC_HOME, KC_END, _______, _______, KC_DEL, _______, KC_BSPC, C_SWEET,
       _______, OSM(MOD_LALT), KC_TAB, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
       TO(_ABC), OSM(MOD_LCTL), KC_LSFT, TO(_SYM)
   ),
