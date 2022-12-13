@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 	[_EEE] = LAYOUT_split_3x5_2(
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-      _______, FR_AGRV, FR_EACU, FR_EGRV, _______, _______, FR_CIRC, FR_DIAE, FR_CCED, _______,
+      FR_CCED, FR_EGRV, FR_EACU, FR_AGRV, _______, _______, FR_DIAE, C_CIRC, _______, _______,
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
       TO(_ABC), _______, _______, _______
   ),
@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       TO(_ABC), OSM(MOD_LCTL), KC_LSFT, TO(_SYM)
   ),
 	[_SYM] = LAYOUT_split_3x5_2(
-      FR_AT, LT(0,C_PARE), LT(0,C_CYBR), LT(0,C_NMBR), FR_EXLM, FR_PERC, FR_SLSH, FR_DLR, C_CIRC, FR_EQL,
+      FR_AT, LT(0,C_PARE), LT(0,C_CYBR), LT(0,C_NMBR), FR_EXLM, FR_PERC, FR_SLSH, FR_DLR, _______, FR_EQL,
       LT(0,C_ANBR), LT(0,C_TILD), LT(0,C_SQUO), LT(0,C_DQUO), LT(0,C_BQUO), FR_HASH, FR_COLN, FR_MINS, FR_DOT, FR_ASTR,
       KC_P1, KC_P2, KC_P3, KC_P4, KC_P5, KC_P6, KC_P7, KC_P8, KC_P9, KC_P0,
       TO(_ABC), FR_PIPE, OSM(MOD_LSFT), TO(_SYS)
@@ -115,8 +115,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           return false;
         }
         break;
-      case C_CIRC: // dead
-        if (record->event.pressed) { tap_code16(FR_CIRC); tap_code16(KC_SPC); return false; }
+      case C_CIRC: // dead on tap -- alive on hold
+        if (record->event.pressed && record->tap.count) { tap_code16(FR_CIRC); return false; } // tap
+        else if (record->event.pressed) { tap_code16(FR_CIRC); tap_code16(KC_SPC); return false; } // hold
         break;
     }
     return true;
