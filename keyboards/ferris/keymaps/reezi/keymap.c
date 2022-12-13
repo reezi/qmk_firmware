@@ -1,11 +1,15 @@
-// includes are done here due to https://github.com/qmk/qmk_firmware/issues/10005
+// some headers are included here due to https://github.com/qmk/qmk_firmware/issues/10005
 #include QMK_KEYBOARD_H
 #include "sendstring_french.h" // qmk alternative keymaps
 #include "features/custom_shift_keys.h" // https://getreuer.info/posts/keyboards/custom-shift-keys/index.html
 
 // aliases
-#define SS SEND_STRING
+#define _ABC 0
+#define _EEE 1
+#define _SYS 2
+#define _SYM 3
 #define C_SWEET KC_F24
+#define SS SEND_STRING
 
 // C_ keycodes for qmk macro
 enum custom_keycodes {
@@ -21,28 +25,6 @@ enum custom_keycodes {
     C_CIRC
 };
 
-// X(keycodes) for qmk unicode map
-//enum unicode_names {
-//    TILDE,
-//    CEDIL,
-//    CIRCU,
-//    DIAER,
-//    ACUTE,
-//    GRAVE
-//};
-//const uint32_t PROGMEM unicode_map[] = {
-//    [GRAVE] = 0x0300,
-//    [ACUTE] = 0x0301,
-//    [CIRCU] = 0x0302,
-//    [TILDE] = 0x0303,
-//    [DIAER] = 0x0308,
-//    [CEDIL] = 0x0327
-//};
-
-#define _ABC 0
-#define _EEE 1
-#define _SYS 2
-#define _SYM 3
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_ABC] = LAYOUT_split_3x5_2(
       FR_B, FR_Y, FR_O, FR_U, FR_Q, _______, FR_L, FR_D, FR_W, FR_V,
