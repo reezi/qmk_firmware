@@ -14,16 +14,12 @@
 // C_ keycodes for qmk macro
 enum custom_keycodes {
     C_FLASH = SAFE_RANGE,
-    C_ANBR,
-    C_CYBR,
-    C_NMBR,
-    C_PARE,
-    C_TILD,
-    C_SQUO,
-    C_DQUO,
-    C_BQUO,
-    C_CIRC
+    C_TILD, C_CIRC,
+    C_SQUO, C_DQUO, C_BQUO,
+    C_ANBR, C_CYBR, C_NMBR, C_PARE
 };
+
+#include "combo.c"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_ABC] = LAYOUT_split_3x5_2(

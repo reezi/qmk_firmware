@@ -6,4 +6,5 @@ UCIS_ENABLE = no
 EXTRAKEY_ENABLE = yes
 SRC += features/custom_shift_keys.c
 CAPS_WORD_ENABLE = yes
+COMBO_ENABLE = yes
 LTO_ENABLE = yes
