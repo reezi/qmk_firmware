@@ -4,6 +4,7 @@
 #include "features/custom_shift_keys.h" // https://getreuer.info/posts/keyboards/custom-shift-keys/index.html
 
 // aliases
+#define ____ _______
 #define _ABC 0
 #define _EEE 1
 #define _SYS 2
@@ -25,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_ABC] = LAYOUT_split_3x5_2(
       FR_B, FR_Y, FR_O, FR_U, FR_Q, _______, FR_L, FR_D, FR_W, FR_V,
       FR_C, FR_I, FR_E, FR_A, FR_Z, _______, FR_H, FR_T, FR_S, FR_N,
-      FR_G, FR_X, FR_J, FR_K, OSL(_EEE), _______, FR_R, FR_M, FR_F, FR_P,
+      FR_G, FR_X, FR_J, FR_K, ____, _______, FR_R, FR_M, FR_F, FR_P,
       MEH_T(KC_SPACE), _______, OSM(MOD_LSFT), TO(_SYS)
   ),
 	[_EEE] = LAYOUT_split_3x5_2(
