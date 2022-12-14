@@ -2,6 +2,7 @@
 #include QMK_KEYBOARD_H
 #include "sendstring_french.h" // qmk alternative keymaps
 #include "features/custom_shift_keys.h" // https://getreuer.info/posts/keyboards/custom-shift-keys/index.html
+#include "g/keymap_combo.h"
 
 // aliases
 #define ____ _______
@@ -11,15 +12,13 @@
 #define _SYS 2
 #define _SYM 3
 
-// C_ keycodes for qmk macro
+// C_ custom keycodes
 enum custom_keycodes {
     C_FLASH = SAFE_RANGE,
     C_TILD, C_CIRC,
     C_SQUO, C_DQUO, C_BQUO,
     C_ANBR, C_CYBR, C_NMBR, C_PARE,
 };
-
-#include "combo.c"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_ABC] = LAYOUT_split_3x5_2(
