@@ -3,6 +3,11 @@ enum combo_events {
   COMBO_Q,
   COMBO_TAB,
   COMBO_ESC,
+  // both hands
+  COMBO_BRI,
+  COMBO_VOL,
+  COMBO_PAGE,
+  COMBO_GOTO,
   // right hand
   COMBO_Z,
   COMBO_EEE,
@@ -18,6 +23,11 @@ uint16_t COMBO_LEN = COMBO_LENGTH;
 const uint16_t PROGMEM combo_q[] = {FR_Y, FR_U, COMBO_END};
 const uint16_t PROGMEM combo_tab[] = {FR_I, FR_A, COMBO_END};
 const uint16_t PROGMEM combo_esc[] = {FR_X, FR_K, COMBO_END};
+// both hands
+const uint16_t PROGMEM combo_bri[] = {C_BRI, KC_UP, COMBO_END};
+const uint16_t PROGMEM combo_vol[] = {C_VOL, KC_UP, COMBO_END};
+const uint16_t PROGMEM combo_page[] = {C_PAGE, KC_UP, COMBO_END};
+const uint16_t PROGMEM combo_goto[] = {C_GOTO, KC_UP, COMBO_END};
 // right hand
 const uint16_t PROGMEM combo_z[] = {FR_L, FR_W, COMBO_END};
 const uint16_t PROGMEM combo_eee[] = {FR_T, FR_N, COMBO_END};
@@ -31,6 +41,11 @@ combo_t key_combos[] = {
   [COMBO_Q] = COMBO_ACTION(combo_q),
   [COMBO_TAB] = COMBO_ACTION(combo_tab),
   [COMBO_ESC] = COMBO_ACTION(combo_esc),
+  // both hands
+  [COMBO_BRI] = COMBO_ACTION(combo_bri),
+  [COMBO_VOL] = COMBO_ACTION(combo_vol),
+  [COMBO_PAGE] = COMBO_ACTION(combo_page),
+  [COMBO_GOTO] = COMBO_ACTION(combo_goto),
   // right hand
   [COMBO_Z] = COMBO_ACTION(combo_z),
   [COMBO_EEE] = COMBO_ACTION(combo_eee),
@@ -48,6 +63,15 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
       if (pressed) { tap_code16(KC_TAB); } break;
     case COMBO_ESC:
       if (pressed) { tap_code16(KC_ESC); } break;
+    // both hands
+    case COMBO_BRI:
+      if (pressed) { tap_code16(KC_BRIU); } break;
+    case COMBO_VOL:
+      if (pressed) { tap_code16(KC_VOLU); } break;
+    case COMBO_PAGE:
+      if (pressed) { tap_code16(KC_PGUP); } break;
+    case COMBO_GOTO:
+      if (pressed) { tap_code16(KC_HOME); } break;
     // right hand
     case COMBO_Z:
       if (pressed) { tap_code16(FR_Z); } break;

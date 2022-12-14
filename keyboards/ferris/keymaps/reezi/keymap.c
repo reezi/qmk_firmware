@@ -9,7 +9,6 @@
 #define _EEE 1
 #define _SYS 2
 #define _SYM 3
-#define C_SWEET KC_F24
 #define SS SEND_STRING
 
 // C_ keycodes for qmk macro
@@ -17,7 +16,8 @@ enum custom_keycodes {
     C_FLASH = SAFE_RANGE,
     C_TILD, C_CIRC,
     C_SQUO, C_DQUO, C_BQUO,
-    C_ANBR, C_CYBR, C_NMBR, C_PARE
+    C_ANBR, C_CYBR, C_NMBR, C_PARE,
+    C_BRI, C_VOL, C_PAGE, C_GOTO,
 };
 
 #include "combo.c"
@@ -36,9 +36,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       TO(_ABC), _______, _______, _______
   ),
 	[_SYS] = LAYOUT_split_3x5_2(
-      KC_BRID, KC_BRIU, KC_VOLD, KC_VOLU, _______, _______, KC_PGUP, KC_PGDN, C_FLASH, QK_BOOTLOADER,
-      KC_ESC, KC_ENTER, KC_HOME, KC_END, _______, _______, KC_DEL, _______, KC_BSPC, C_SWEET,
-      _______, OSM(MOD_LALT), KC_TAB, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
+      _______, _______, _______, _______, _______, _______, _______, _______, _______, C_FLASH,
+      C_BRI, C_VOL, C_PAGE, C_GOTO, _______, _______, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
+      OSM(MOD_LALT), _______, KC_ESC, KC_TAB, _______, _______, KC_BSPC, KC_ENTER, KC_DEL, _______,
       TO(_ABC), OSM(MOD_LCTL), KC_LSFT, TO(_SYM)
   ),
 	[_SYM] = LAYOUT_split_3x5_2(
@@ -70,7 +70,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
       // if is on key down -- else is on key up
       case C_FLASH:
-        if (record->event.pressed) { SS("qmk flash" SS_TAP(X_ENTER)); return false; }
+        if (record->event.pressed && record->tap.count) { SS("qmk flash" SS_TAP(X_ENTER)); return false; } // tap
+        if (record->event.pressed) { tap_code16(QK_BOOTLOADER); return false; } // hold
+        break;
+      case C_BRI:
+        if (record->event.pressed && record->tap.count) { tap_code16(KC_BRID); return false; } // tap
+        break;
+      case C_VOL:
+        if (record->event.pressed && record->tap.count) { tap_code16(KC_VOLD); return false; } // tap
+        break;
+      case C_PAGE:
+        if (record->event.pressed && record->tap.count) { tap_code16(KC_PGDN); return false; } // tap
+        break;
+      case C_GOTO:
+        if (record->event.pressed && record->tap.count) { tap_code16(KC_END); return false; } // tap
         break;
       case LT(0,C_ANBR):
         if (record->event.pressed && record->tap.count) { SS("<"); return false; } // tap
