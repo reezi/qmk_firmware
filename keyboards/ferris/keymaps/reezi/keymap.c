@@ -20,7 +20,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       FR_B, FR_Y, FR_O, FR_U, _______, _______, FR_L, FR_D, FR_W, FR_V,
       FR_C, FR_I, FR_E, FR_A, _______, _______, FR_H, FR_T, FR_S, FR_N,
       FR_G, FR_X, FR_J, FR_K, _______, _______, FR_R, FR_M, FR_F, FR_P,
-      MEH_T(KC_SPACE), _______, _______, TO(_SYS)
+      MEH_T(KC_SPACE), _______, TO(_SYS), TO(_SYM)
   ),
 	[_EEE] = LAYOUT_split_3x5_2(
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
