@@ -20,7 +20,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       FR_B, FR_Y, FR_O, FR_U, _______, _______, FR_L, FR_D, FR_W, FR_V,
       FR_C, FR_I, FR_E, FR_A, _______, _______, FR_H, FR_T, FR_S, FR_N,
       FR_G, FR_X, FR_J, FR_K, _______, _______, FR_R, FR_M, FR_F, FR_P,
-      MEH_T(KC_SPACE), _______, OSM(MOD_LSFT), TO(_SYS)
+      MEH_T(KC_SPACE), _______, _______, TO(_SYS)
   ),
 	[_EEE] = LAYOUT_split_3x5_2(
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
@@ -29,10 +29,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       TO(_ABC), _______, _______, _______
   ),
 	[_SYS] = LAYOUT_split_3x5_2(
-      _______, _______, _______, _______, _______, _______, _______, _______, _______, C_FLASH,
+      _______, _______, _______, _______, _______, _______, _______, _______, _______, LT(0,C_FLASH),
       KC_BRID, KC_VOLD, KC_PGDN, KC_END, _______, _______, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
       _______, OSM(MOD_LALT), KC_ESC, KC_TAB, _______, _______, KC_BSPC, KC_ENTER, KC_DEL, _______,
-      TO(_ABC), OSM(MOD_LCTL), KC_LSFT, TO(_SYM)
+      TO(_ABC), OSM(MOD_LCTL), OSM(MOD_LSFT), TO(_SYM)
   ),
 	[_SYM] = LAYOUT_split_3x5_2(
       FR_AT, LT(0,C_PARE), LT(0,C_CYBR), LT(0,C_NMBR), FR_EXLM, FR_PERC, FR_SLSH, FR_DLR, FR_PIPE, FR_EQL,

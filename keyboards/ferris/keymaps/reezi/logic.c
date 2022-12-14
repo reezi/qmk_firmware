@@ -3,7 +3,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!process_custom_shift_keys(keycode, record)) { return false; }
     switch (keycode) {
       // if is on key down -- else is on key up
-      case C_FLASH:
+      case LT(0,C_FLASH):
         if (record->event.pressed && record->tap.count) { SS("qmk flash" SS_TAP(X_ENTER)); return false; } // tap
         if (record->event.pressed) { tap_code16(QK_BOOTLOADER); return false; } // hold
         break;
