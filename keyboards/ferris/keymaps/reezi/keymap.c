@@ -29,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       TO(_ABC), _______, _______, _______
   ),
 	[_SYS] = LAYOUT_split_3x5_2(
-      _______, _______, _______, _______, _______, _______, _______, _______, _______, LT(0,C_FLASH),
+      _______, _______, _______, _______, _______, _______, KC_PSCR, _______, _______, LT(0,C_FLASH),
       KC_BRID, KC_VOLD, KC_PGDN, KC_END, _______, _______, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
       _______, OSM(MOD_LALT), KC_ESC, KC_TAB, _______, _______, KC_BSPC, KC_ENTER, KC_DEL, _______,
       TO(_ABC), OSM(MOD_LCTL), OSM(MOD_LSFT), TO(_SYM)
