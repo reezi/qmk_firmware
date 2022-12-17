@@ -26,8 +26,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         else if (HOLD) { SS("()" SS_TAP(X_LEFT)); }
         return false;
       case LT(0,C_TILD): // dead
-        if (TAP) { tap_code16(FR_TILD); }
-        else if (HOLD) { tap_code16(FR_TILD); tap_code16(FR_SLSH); }
+        if (TAP) { tap_code16(FR_TILD); tap_code16(FR_SLSH); }
+        else if (HOLD) { tap_code16(FR_TILD); }
         return false;
       case LT(0,C_SQUO):
         if (TAP) { SS("'"); }
@@ -55,12 +55,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (TAP) { tap_code16(FR_CIRC); }
         else if (HOLD) { tap_code16(FR_CIRC); tap_code16(KC_SPC); }
         return false;
-//      default:
-//        if ((FR_A <= keycode) && (keycode <= FR_Z)) { // alpha
-//          if (TAP) { tap_code16(keycode); }
-//          else if (HOLD) { tap_code16(LSFT(keycode)); }
-//        }
-//        return false;
     }
     return true;
 };
