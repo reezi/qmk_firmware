@@ -5,6 +5,7 @@
 
 enum custom_keycodes {
     C_FLASH = SAFE_RANGE,
+    C_ESC,
     C_TILD, C_CIRC,
     C_SQUO, C_DQUO, C_BQUO,
     C_ANBR, C_CYBR, C_NMBR, C_PARE,

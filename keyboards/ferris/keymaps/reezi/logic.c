@@ -12,6 +12,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           reset_keyboard(); // QK_BOOTLOADER
         }
         return false;
+      case LT(0,C_ESC):
+        if (TAP) { SS(SS_TAP(X_ESC)); }
+        else if (HOLD) { SS(SS_TAP(X_ESC) ":"); }
+        return false;
       case LT(0,C_ANBR):
         if (TAP) { SS("<"); }
         else if (HOLD) { SS("<>" SS_TAP(X_LEFT)); }
