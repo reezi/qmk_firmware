@@ -7,7 +7,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
       case LT(0,C_FLASH):
         if (TAP) { SS("qmk flash" SS_TAP(X_ENTER)); }
-        else if (HOLD) { SS_LCTL("uk"); reset_keyboard(); } // QK_BOOTLOADER
+        else if (HOLD) { SS(SS_LCTL("uk")); reset_keyboard(); } // QK_BOOTLOADER
         return false;
       case LT(0,C_ANBR):
         if (TAP) { SS("<"); }

@@ -1,6 +1,5 @@
+// https://getreuer.info/posts/keyboards/custom-shift-keys/index.html
 const custom_shift_key_t custom_shift_keys[] = {
-  {FR_MINS, FR_UNDS}, // shift - is _
-  {FR_QUES, FR_EXLM}, // shift ? is !
   {FR_COMM, FR_SCLN}, // shift , is ;
   {FR_DOT, FR_COLN}, // shift . is :
   {LT(0,C_ANBR), FR_RABK}, // shift < is >
