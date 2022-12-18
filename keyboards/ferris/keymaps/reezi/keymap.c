@@ -27,13 +27,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       MEH_T(KC_SPACE), _______, OS_LSFT, TO(_SYM)
   ),
 	[_EEE] = LAYOUT_split_3x5_2(
-      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+      _______, _______, _______, _______, _______, _______, _______, _______, _______, LT(0,C_FLASH),
       FR_CCED, FR_EACU, FR_EGRV, FR_AGRV, _______, _______, FR_DIAE, FR_CIRC, _______, _______,
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
       TO(_ABC), _______, _______, _______
   ),
 	[_SYS] = LAYOUT_split_3x5_2(
-      _______, _______, _______, _______, _______, _______, KC_PSCR, _______, LT(0,C_FLASH), QK_BOOTLOADER,
+      _______, _______, _______, _______, _______, _______, KC_PSCR, _______, _______, _______,
       KC_BRID, KC_VOLD, KC_PGDN, KC_END,  _______, _______, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
       _______, OS_LALT, KC_ESC,  KC_TAB,  _______, _______, KC_BSPC, KC_ENTER, _______, KC_DEL,
       TO(_ABC), OS_LCTL, OS_LSFT, TO(_SYM)
