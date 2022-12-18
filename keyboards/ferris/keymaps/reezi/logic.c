@@ -6,8 +6,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!process_custom_shift_keys(keycode, record)) { return false; }
     switch (keycode) {
       case LT(0,C_FLASH):
-        if (TAP) { SS("qmk flash" SS_TAP(X_ENTER)); }
-        else if (HOLD) { SS(SS_LCTL("uk")); reset_keyboard(); } // QK_BOOTLOADER
+        if (TAP) {
+          SS(SS_LCTL("uk"));
+          SS("qmk flash" SS_TAP(X_ENTER)); }
+          reset_keyboard(); // QK_BOOTLOADER
+        }
         return false;
       case LT(0,C_ANBR):
         if (TAP) { SS("<"); }
