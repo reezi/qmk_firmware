@@ -5,6 +5,7 @@
 
 enum custom_keycodes {
     C_FLASH = SAFE_RANGE,
+    C_U,
     C_ESC,
     C_TILD, C_CIRC,
     C_SQUO, C_DQUO, C_BQUO,
@@ -22,7 +23,7 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_ABC] = LAYOUT_split_3x5_2(
-      FR_B, FR_Y, FR_O, FR_U, FR_MINS, FR_UNDS, FR_L, FR_D, FR_W, FR_V,
+      FR_B, FR_Y, FR_O, LT(0,C_U), FR_MINS, FR_UNDS, FR_L, FR_D, FR_W, FR_V,
       FR_C, FR_I, FR_E, FR_A, FR_COMM, FR_DOT,  FR_H, FR_T, FR_S, FR_N,
       FR_G, FR_X, FR_J, FR_K, FR_Z,    FR_Q,    FR_R, FR_M, FR_F, FR_P,
       MEH_T(KC_SPACE), _______, OS_LSFT, TO(_SYM)
