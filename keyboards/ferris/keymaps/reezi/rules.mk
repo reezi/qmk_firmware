@@ -8,4 +8,5 @@ SRC += features/custom_shift_keys.c
 VPATH += keyboards/gboards
 CAPS_WORD_ENABLE = yes
 COMBO_ENABLE = yes
+LEADER_ENABLE = yes
 LTO_ENABLE = yes

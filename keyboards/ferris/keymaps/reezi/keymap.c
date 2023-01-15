@@ -19,14 +19,14 @@ enum custom_keycodes {
 #define _SYS 2
 #define _SYM 3
 
-#include "g/keymap_combo.h" 
+#include "g/keymap_combo.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_ABC] = LAYOUT_split_3x5_2(
       FR_B, FR_Y, FR_O, LT(0,C_U), FR_MINS, FR_UNDS, FR_L, FR_D, FR_W, FR_V,
       FR_C, FR_I, FR_E, FR_A,      FR_COMM, FR_DOT,  FR_H, FR_T, FR_S, FR_N,
       FR_G, FR_X, FR_J, FR_K,      FR_Z,    FR_Q,    FR_R, FR_M, FR_F, FR_P,
-      MEH_T(KC_SPACE), _______, OS_LSFT, TO(_SYM)
+      LT(0,C_SPCL), KC_LEAD, OS_LSFT, TO(_SYM)
   ),
 	[_EEE] = LAYOUT_split_3x5_2(
       _______, _______, _______, _______, _______, _______, _______, _______, _______, LT(0,C_FLASH),

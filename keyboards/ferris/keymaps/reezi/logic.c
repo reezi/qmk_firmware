@@ -1,4 +1,31 @@
 #define SS SEND_STRING
+#define SS_C SS_LCTL
+#define SS_S SS_LSFT
+#define SS_A SS_LALT
+#define SS_H SS_C(SS_S(SS_A(SS_LGUI
+
+LEADER_EXTERNS();
+
+void matrix_scan_user(void) {
+  LEADER_DICTIONARY() {
+    leading = false;
+    leader_end();
+
+    // web
+    SEQ_ONE_KEY(FR_W) {
+      SS(SS_C(SS_S(SS_A(SS_LGUI("w")))));
+    }
+
+    // web search
+    SEQ_TWO_KEYS(FR_W, FR_W) {
+      SS(SS_C(SS_S(SS_A(SS_LGUI("w")))));
+      SS(SS_C("t"));
+      SS(SS_A("d"));
+    }
+
+  }
+}
+
 #define TAP record->event.pressed && record->tap.count
 #define HOLD record->event.pressed
 
@@ -7,7 +34,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
       case LT(0,C_FLASH):
         if (TAP) {
-          SS(SS_LCTL("uk"));
+          SS(SS_C("uk"));
           SS("qmk flash" SS_TAP(X_ENTER));
           reset_keyboard(); // QK_BOOTLOADER
         }
