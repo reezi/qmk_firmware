@@ -16,7 +16,7 @@ count | part | from
 1x | usb-c usb-a adapter | amazon
 10x | rubber feet | amazon
 
-# soldering gear
+# soldering
 
 part | from
 -----|-----
@@ -32,8 +32,8 @@ qmk compile
 ls ~/keeb/qmkfw/.build
 
 # from root of qmk repo
-make ferris/sweep:reezi:dfu-split-left
-make ferris/sweep:reezi:dfu-split-right
+make ferris/sweep:my:dfu-split-left
+make ferris/sweep:my:dfu-split-right
 
 qmk flash
 ```

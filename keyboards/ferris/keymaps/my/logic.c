@@ -2,7 +2,41 @@
 #define SS_C SS_LCTL
 #define SS_S SS_LSFT
 #define SS_A SS_LALT
-#define SS_H SS_C(SS_S(SS_A(SS_LGUI
+
+
+
+#define STD_LAYER layer_state_is(_ABC) || layer_state_is(_EEE) || layer_state_is(_SYM) || layer_state_is(_SYS)
+#define WOW_LAYER layer_state_is(_WST) || layer_state_is(_WMT)
+
+bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
+
+  switch (combo_index) {
+
+    case COMBO_STD_TAB:
+    case COMBO_STD_ESC:
+    case COMBO_STD_BSPC:
+    case COMBO_STD_DEL:
+    case COMBO_STD_ENTER:
+      return true;
+
+    case COMBO_STD_CYBR:
+    case COMBO_STD_PARE:
+    case COMBO_STD_NMBR:
+    case COMBO_STD_EEE:
+    case COMBO_STD_DQUO:
+    case COMBO_STD_SQUO:
+    case COMBO_STD_TILD:
+      if (STD_LAYER) return true;
+
+    case COMBO_WOW_GATE:
+      if (WOW_LAYER) return true;
+      break;
+
+  }
+  return false;
+}
+
+
 
 LEADER_EXTERNS();
 
@@ -10,6 +44,11 @@ void matrix_scan_user(void) {
   LEADER_DICTIONARY() {
     leading = false;
     leader_end();
+
+    // wow layer
+    SEQ_THREE_KEYS(FR_W, FR_O, FR_W) {
+      layer_move(_WST);
+    }
 
     // web
     SEQ_ONE_KEY(FR_W) {
@@ -25,6 +64,8 @@ void matrix_scan_user(void) {
 
   }
 }
+
+
 
 #define TAP record->event.pressed && record->tap.count
 #define HOLD record->event.pressed

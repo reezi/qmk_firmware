@@ -16,8 +16,10 @@ enum custom_keycodes {
 #define OS_LCTL OSM(MOD_LCTL)
 #define _ABC 0
 #define _EEE 1
-#define _SYS 2
-#define _SYM 3
+#define _SYM 2
+#define _SYS 3
+#define _WST 10
+#define _WMT 11
 
 #include "g/keymap_combo.h"
 
@@ -34,18 +36,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
       TO(_ABC), _______, _______, _______
   ),
-	[_SYS] = LAYOUT_split_3x5_2(
-      _______, _______, _______, _______, _______, _______, KC_PSCR, _______, _______, _______,
-      KC_BRID, KC_VOLD, KC_PGDN, KC_END,  _______, _______, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
-      _______, OS_LALT, KC_ESC,  KC_TAB,  _______, _______, KC_BSPC, KC_ENTER, _______, KC_DEL,
-      TO(_ABC), OS_LCTL, OS_LSFT, TO(_SYM)
-  ),
 	[_SYM] = LAYOUT_split_3x5_2(
       _______, FR_PERC, FR_ASTR, FR_PLUS, FR_MINS, FR_UNDS, FR_AMPR, FR_DLR, FR_BSLS, C_BQUO,
       C_ANBR,  FR_QUES, FR_HASH, FR_EXLM, FR_COMM, FR_DOT,  FR_PIPE, FR_EQL, FR_SLSH, FR_AT,
       KC_P1,   KC_P2,   KC_P3,   KC_P4,   KC_P5,   KC_P6,   KC_P7,   KC_P8,  KC_P9,   KC_P0,
       TO(_ABC), _______, OS_LSFT, TO(_SYS)
-  )
+  ),
+	[_SYS] = LAYOUT_split_3x5_2(
+      _______, KC_BRID, KC_VOLD, _______, _______, _______, KC_PSCR, _______, _______, KC_NUM_LOCK,
+      _______, _______, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,
+      OS_LCTL, _______, _______, OS_LALT, _______, _______, _______, KC_PGDN, _______, KC_END,
+      TO(_ABC), _______, OS_LSFT, _______
+  ),
+	[_WST] = LAYOUT_split_3x5_2(
+      _______,  _______, _______, _______, _______,     _______, _______, _______, _______, _______,
+      TO(_WMT), FR_I,    FR_E,    FR_A,    _______,     _______, _______, _______, _______, _______,
+      KC_SPC,   _______, _______, _______, _______,     _______, _______, _______, _______, _______,
+      KC_LCTL, KC_LSFT, _______, TO(_ABC)
+  ),
+	[_WMT] = LAYOUT_split_3x5_2(
+      _______,   _______, _______, _______, _______,     _______, _______, _______, _______, _______,
+      TO(_WST),  FR_R,    FR_M,    FR_F,    _______,     _______, _______, _______, _______, _______,
+      _______,   _______, _______, _______, _______,     _______, _______, _______, _______, _______,
+      _______, _______, _______, _______
+  ),
 };
 
 #include "shift.c"

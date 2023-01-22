@@ -1,5 +1,17 @@
-#define ONESHOT_TAP_TOGGLE 2 // shift shift ... shift
-#define COMBO_ONLY_FROM_LAYER 0 // combo disregard layers
-#define LEADER_NO_TIMEOUT // infinite time after leader before sequence
+// shift shift ... shift
+#define ONESHOT_TAP_TOGGLE 2
+
+// disregard layers
+#define COMBO_ONLY_FROM_LAYER 0
+
+// combo live if conditionals
+#define COMBO_SHOULD_TRIGGER
+
+// leader ... infinite time ... sequence
+#define LEADER_NO_TIMEOUT
+
+// in-sequence timer reset
 #define LEADER_PER_KEY_TIMING
-#define LEADER_TIMEOUT 250 // in-sequence
+
+// in-sequence timer ms
+#define LEADER_TIMEOUT 250
