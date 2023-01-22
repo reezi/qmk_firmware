@@ -62,5 +62,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 };
 
+
+#define SS SEND_STRING
+#define SS_C SS_LCTL
+#define SS_S SS_LSFT
+#define SS_A SS_LALT
+#include "tap-dance.c"
+#include "combo.c"
+#include "leader.c"
+
 #include "shift.c"
-#include "logic.c"
