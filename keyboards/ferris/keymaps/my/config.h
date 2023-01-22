@@ -1,7 +1,7 @@
 // shift shift ... shift
 #define ONESHOT_TAP_TOGGLE 2
 
-// disregard layers
+// look at position occupied by key on layer 0
 #define COMBO_ONLY_FROM_LAYER 0
 
 // combo live if conditionals
