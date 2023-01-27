@@ -9,7 +9,6 @@ const custom_shift_key_t custom_shift_keys[] = {
   {FR_DLR, FR_EURO}, // shift $ is €
   {KC_BRID, KC_BRIU}, // shift bri-- is bri++
   {KC_VOLD, KC_VOLU}, // shift vol-- is vol++
-  {KC_PGDN, KC_PGUP}, // shift pagedown is pageup
-  {KC_END, KC_HOME}, // shift end is home
+  {C_ZOOMD, C_ZOOMU}, // shift zoom-- is zoom++
 };
 uint8_t NUM_CUSTOM_SHIFT_KEYS = sizeof(custom_shift_keys) / sizeof(custom_shift_key_t);

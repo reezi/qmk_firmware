@@ -10,6 +10,7 @@ enum custom_keycodes {
     C_TILD, C_CIRC,
     C_SQUO, C_DQUO, C_BQUO,
     C_ANBR, C_CYBR, C_NMBR, C_PARE,
+    C_ZOOMD, C_ZOOMU,
 };
 #define OS_LSFT OSM(MOD_LSFT)
 #define OS_LALT OSM(MOD_LALT)
@@ -31,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       LT(0,C_SPCL), KC_LEAD, OS_LSFT, TO(_SYM)
   ),
 	[_EEE] = LAYOUT_split_3x5_2(
-      _______, _______, _______, _______, _______, _______, _______, _______, _______, LT(0,C_FLASH),
+      _______, _______, _______, _______, _______, _______, _______, _______, _______, C_FLASH,
       FR_CCED, FR_EACU, FR_EGRV, FR_AGRV, _______, _______, FR_DIAE, FR_CIRC, _______, _______,
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
       TO(_ABC), _______, _______, _______
@@ -43,10 +44,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       TO(_ABC), _______, OS_LSFT, TO(_SYS)
   ),
 	[_SYS] = LAYOUT_split_3x5_2(
-      _______, KC_BRID, KC_VOLD, _______, _______, _______, KC_PSCR, _______, _______, KC_NUM_LOCK,
-      _______, _______, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,
-      OS_LCTL, _______, _______, OS_LALT, _______, _______, _______, KC_PGDN, _______, KC_END,
-      TO(_ABC), _______, OS_LSFT, _______
+      _______, _______, _______, _______, _______, _______, KC_PSCR, _______, _______, KC_NUM_LOCK,
+      _______, KC_BRID, KC_VOLD, C_ZOOMD, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,
+      _______, _______, _______, OS_LALT, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
+      TO(_ABC), OS_LCTL, OS_LSFT, _______
   ),
 	[_WST] = LAYOUT_split_3x5_2(
       _______,  _______, _______, _______, _______,     _______, _______, _______, _______, _______,
@@ -67,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #define SS_C SS_LCTL
 #define SS_S SS_LSFT
 #define SS_A SS_LALT
-#include "tap-dance.c"
+#include "tap.c"
 #include "combo.c"
 #include "leader.c"
 
