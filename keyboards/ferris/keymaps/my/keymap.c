@@ -46,8 +46,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_SYS] = LAYOUT_split_3x5_2(
       _______, _______, _______, _______, _______, _______, KC_PSCR, _______, _______, KC_NUM_LOCK,
       _______, KC_BRID, KC_VOLD, C_ZOOMD, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,
-      _______, _______, _______, OS_LALT, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
-      TO(_ABC), OS_LCTL, OS_LSFT, _______
+      _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
+      TO(_ABC), OS_LALT, OS_LSFT, OS_LCTL
   ),
 	[_WST] = LAYOUT_split_3x5_2(
       _______,  _______, _______, _______, _______,     _______, _______, _______, _______, _______,
@@ -56,9 +56,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_LCTL, KC_LSFT, _______, TO(_ABC)
   ),
 	[_WMT] = LAYOUT_split_3x5_2(
-      _______,   _______, _______, _______, _______,     _______, _______, _______, _______, _______,
-      TO(_WST),  FR_R,    FR_M,    FR_F,    _______,     _______, _______, _______, _______, _______,
-      _______,   _______, _______, _______, _______,     _______, _______, _______, _______, _______,
+      _______,  _______, _______, _______, _______,     _______, _______, _______, _______, _______,
+      TO(_WST), FR_R,    FR_M,    FR_F,    _______,     _______, _______, _______, _______, _______,
+      _______,  _______, _______, _______, _______,     _______, _______, _______, _______, _______,
       _______, _______, _______, _______
   ),
 };
@@ -68,6 +68,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #define SS_C SS_LCTL
 #define SS_S SS_LSFT
 #define SS_A SS_LALT
+#define SS_G SS_LGUI
+#define SS_CS(string) SS_C(SS_S(string))
+#define SS_CA(string) SS_C(SS_A(string))
+#define SS_SA(string) SS_S(SS_A(string))
+#define SS_MEH(string) SS_C(SS_S(SS_A(string)))
+#define SS_HYPER(string) SS_C(SS_S(SS_A(SS_G(string))))
 #include "tap.c"
 #include "combo.c"
 #include "leader.c"
