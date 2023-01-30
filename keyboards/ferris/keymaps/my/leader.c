@@ -12,7 +12,7 @@ void matrix_scan_user(void) {
     SEQ_ONE_KEY(FR_C) { SS(SS_G("sc")); } // chat
     SEQ_ONE_KEY(FR_G) { SS(SS_G("sg")); } // game
 
-    SEQ_TWO_KEYS(FR_W, FR_S) { SS(SS_HYPER("w")); SS(SS_C("t")); SS(SS_A("d")); } // web search
+    SEQ_TWO_KEYS(FR_W, FR_S) { SS(SS_G("sw")); SS(SS_C("t")); SS(SS_A("d")); } // web search
 
     SEQ_THREE_KEYS(FR_W, FR_O, FR_W) { layer_move(_WST); } // wow layer
 
