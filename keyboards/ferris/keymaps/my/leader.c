@@ -5,7 +5,7 @@ void matrix_scan_user(void) {
     leading = false;
     leader_end();
 
-    SEQ_ONE_KEY(FR_S) { set_oneshot_mods(MOD_BIT(KC_LGUI)); } // lgui is my sway mod key
+    SEQ_ONE_KEY(FR_S) { add_oneshot_mods(MOD_BIT(KC_LGUI)); } // sway mod key
     SEQ_ONE_KEY(FR_T) { SS(SS_G("st")); } // terminal
     SEQ_ONE_KEY(FR_E) { SS(SS_G("se")); } // editor
     SEQ_ONE_KEY(FR_W) { SS(SS_G("sw")); } // web

@@ -18,6 +18,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (TAP) { SS("u"); }
         else if (HOLD) { SS("qu"); }
         return false;
+      case LT(0,C_SPCL):
+        if (TAP) { tap_code16(KC_SPC); }
+        else if (HOLD) { add_oneshot_mods(MOD_BIT(KC_LCTL)); }
+        return false;
       case LT(0,C_ESC):
         if (TAP) { SS(SS_TAP(X_ESC)); }
         else if (HOLD) { SS(SS_TAP(X_ESC) ":"); }
