@@ -43,8 +43,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         else if (HOLD) { SS("()" SS_TAP(X_LEFT)); }
         return false;
       case LT(0,C_TILD): // dead
-        if (TAP) { tap_code16(FR_TILD); tap_code16(FR_SLSH); }
-        else if (HOLD) { tap_code16(FR_TILD); }
+        if (TAP) { tap_code16(FR_TILD); SS("/"); }
+        else if (HOLD) { tap_code16(FR_TILD); SS("/.config/"); }
         return false;
       case LT(0,C_SQUO):
         if (TAP) { SS("'"); }
