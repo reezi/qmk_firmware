@@ -6,11 +6,10 @@ void matrix_scan_user(void) {
     leader_end();
 
     SEQ_ONE_KEY(FR_S) { add_oneshot_mods(MOD_BIT(KC_LGUI)); } // sway mod key
-    SEQ_ONE_KEY(FR_T) { SS(SS_G("st")); } // terminal
-    SEQ_ONE_KEY(FR_E) { SS(SS_G("se")); } // editor
-    SEQ_ONE_KEY(FR_W) { SS(SS_G("sw")); } // web
-    SEQ_ONE_KEY(FR_C) { SS(SS_G("sc")); } // chat
-    SEQ_ONE_KEY(FR_G) { SS(SS_G("sg")); } // game
+    SEQ_ONE_KEY(FR_T) { SS(SS_CG("st")); } // terminal
+    SEQ_ONE_KEY(FR_E) { SS(SS_CG("se")); } // editor
+    SEQ_ONE_KEY(FR_W) { SS(SS_CG("sw")); } // web
+    SEQ_ONE_KEY(FR_C) { SS(SS_CG("sc")); } // chat
 
     SEQ_TWO_KEYS(FR_W, FR_S) { SS(SS_G("sw")); SS(SS_C("t")); SS(SS_A("d")); } // web search
 

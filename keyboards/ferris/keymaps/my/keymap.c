@@ -71,6 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #define SS_G SS_LGUI
 #define SS_CS(string) SS_C(SS_S(string))
 #define SS_CA(string) SS_C(SS_A(string))
+#define SS_CG(string) SS_C(SS_G(string))
 #define SS_SA(string) SS_S(SS_A(string))
 #define SS_MEH(string) SS_C(SS_S(SS_A(string)))
 #define SS_HYPER(string) SS_C(SS_S(SS_A(SS_G(string))))
