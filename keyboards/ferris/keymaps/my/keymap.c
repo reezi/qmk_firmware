@@ -44,9 +44,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       TO(_ABC), _______, OS_LSFT, TO(_SYS)
   ),
 	[_SYS] = LAYOUT_split_3x5_2(
-      _______, _______, _______, _______, _______, _______, KC_PSCR, _______, _______, KC_NUM_LOCK,
-      _______, KC_BRID, KC_VOLD, C_ZOOMD, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,
-      _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
+      _______, KC_BRIU, KC_VOLU, LT(0,C_ZOOMU), _______, _______, KC_PSCR, _______, _______, KC_NUM_LOCK,
+      _______, KC_BRID, KC_VOLD, LT(0,C_ZOOMD), _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,
+      _______, _______, _______, _______,       _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
       TO(_ABC), OS_LALT, OS_LSFT, _______
   ),
 	[_WST] = LAYOUT_split_3x5_2(

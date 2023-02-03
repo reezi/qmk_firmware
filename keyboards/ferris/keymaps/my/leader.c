@@ -11,9 +11,11 @@ void matrix_scan_user(void) {
     SEQ_ONE_KEY(FR_W) { SS(SS_CG("w")); } // web
     SEQ_ONE_KEY(FR_C) { SS(SS_CG("c")); } // chat
 
-    SEQ_TWO_KEYS(FR_W, FR_S) { SS(SS_G("sw")); SS(SS_C("t")); SS(SS_A("d")); } // web search
+    SEQ_TWO_KEYS(FR_W, FR_S) { SS(SS_G("ws")); SS(SS_C("t")); SS(SS_A("d")); } // web search
 
     SEQ_THREE_KEYS(FR_W, FR_O, FR_W) { layer_move(_WST); } // wow layer
+    SEQ_THREE_KEYS(FR_S, FR_S, FR_R) { SS(SS_CG("sr")); } // sway reload
+    SEQ_THREE_KEYS(FR_S, FR_S, FR_K) { SS(SS_CG("sk")); } // sway kill
     SEQ_THREE_KEYS(FR_T, FR_T, FR_Y) { SS(SS_CA(SS_TAP(X_F1))); } // tty 1
 
     SEQ_FOUR_KEYS(FR_T, FR_T, FR_Y, FR_1) { SS(SS_CA(SS_TAP(X_F1))); } // tty 1

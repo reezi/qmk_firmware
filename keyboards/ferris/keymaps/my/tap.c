@@ -8,11 +8,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         SS(SS_C("uk"));
         SS("qmk flash" SS_TAP(X_ENTER));
         reset_keyboard(); // QK_BOOTLOADER
-      case C_ZOOMD:
-        SS(SS_C("-"));
+      case LT(0,C_ZOOMD):
+        if (TAP) { SS(SS_C("-")); }
+        else if (HOLD) { SS(SS_C("-")); }
         return false;
-      case C_ZOOMU:
-        SS(SS_C("+"));
+      case LT(0,C_ZOOMU):
+        if (TAP) { SS(SS_C("+")); }
+        else if (HOLD) { SS(SS_C("+")); }
         return false;
       case LT(0,C_U):
         if (TAP) { SS("u"); }
