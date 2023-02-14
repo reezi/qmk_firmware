@@ -38,9 +38,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       TO(_ABC), _______, _______, _______
   ),
 	[_SYM] = LAYOUT_split_3x5_2(
-      _______, FR_PERC, FR_ASTR, FR_PLUS, FR_MINS, FR_UNDS, FR_AMPR, FR_DLR, FR_BSLS, C_BQUO,
-      C_ANBR,  FR_QUES, FR_HASH, FR_EXLM, FR_COMM, FR_DOT,  FR_PIPE, FR_EQL, FR_SLSH, FR_AT,
-      FR_1,    FR_2,    FR_3,    FR_4,    FR_5,    FR_6,    FR_7,    FR_8,   FR_9,    FR_0,
+      _______, FR_PERC,      FR_ASTR, FR_PLUS, FR_COMM, FR_DOT,  FR_AMPR, FR_DLR, FR_BSLS, LT(0,C_BQUO),
+      FR_QUES, LT(0,C_ANBR), FR_HASH, FR_EXLM, FR_MINS, FR_COLN, FR_PIPE, FR_EQL, FR_SLSH, FR_AT,
+      FR_1,    FR_2,         FR_3,    FR_4,    FR_5,    FR_6,    FR_7,    FR_8,   FR_9,    FR_0,
       TO(_ABC), _______, OS_LSFT, TO(_SYS)
   ),
 	[_SYS] = LAYOUT_split_3x5_2(
