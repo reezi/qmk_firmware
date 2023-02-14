@@ -6,12 +6,12 @@ void matrix_scan_user(void) {
     leader_end();
 
     SEQ_ONE_KEY(FR_S) { add_oneshot_mods(MOD_BIT(KC_LGUI)); } // sway mod key
+    SEQ_ONE_KEY(FR_F) { SS(SS_CG("f")); } // free
     SEQ_ONE_KEY(FR_T) { SS(SS_CG("t")); } // terminal
     SEQ_ONE_KEY(FR_E) { SS(SS_CG("e")); } // editor
     SEQ_ONE_KEY(FR_W) { SS(SS_CG("w")); } // web
-    SEQ_ONE_KEY(FR_C) { SS(SS_CG("c")); } // chat
+    SEQ_ONE_KEY(FR_C) { SS(SS_CG("d")); } // voice
 
-    SEQ_TWO_KEYS(FR_W, FR_S) { SS(SS_G("ws")); SS(SS_C("t")); SS(SS_A("d")); } // web search
     SEQ_TWO_KEYS(FR_T, FR_H) { SS(SS_CA(SS_TAP(X_F1))); } // tty 1
     SEQ_TWO_KEYS(FR_T, FR_S) { SS(SS_CA(SS_TAP(X_F2))); } // tty 2
 
