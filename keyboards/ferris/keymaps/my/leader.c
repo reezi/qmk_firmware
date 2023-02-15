@@ -10,10 +10,12 @@ void matrix_scan_user(void) {
     SEQ_ONE_KEY(FR_T) { SS(SS_CG("t")); } // terminal
     SEQ_ONE_KEY(FR_E) { SS(SS_CG("e")); } // editor
     SEQ_ONE_KEY(FR_W) { SS(SS_CG("w")); } // web
-    SEQ_ONE_KEY(FR_D) { SS(SS_CG("d")); } // voice
+    SEQ_ONE_KEY(FR_D) { SS(SS_CG("d")); } // voice (Discord)
+    SEQ_ONE_KEY(FR_A) { SS(SS_CG("a")); } // game (Adventure)
 
     SEQ_TWO_KEYS(FR_T, FR_H) { SS(SS_CA(SS_TAP(X_F1))); } // tty 1
     SEQ_TWO_KEYS(FR_T, FR_S) { SS(SS_CA(SS_TAP(X_F2))); } // tty 2
+    SEQ_TWO_KEYS(FR_T, FR_T) { SS(SS_CG( SS_DOWN(X_T) SS_DOWN(X_N) SS_UP(X_N) SS_UP(X_T) )); } // new terminal
 
     SEQ_THREE_KEYS(FR_W, FR_O, FR_W) { layer_move(_WST); } // wow layer
     SEQ_THREE_KEYS(FR_S, FR_S, FR_R) { SS(SS_CG( SS_DOWN(X_S) SS_DOWN(X_R) SS_UP(X_R) SS_UP(X_S) )); } // sway reload
