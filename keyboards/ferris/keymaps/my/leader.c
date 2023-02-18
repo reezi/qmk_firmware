@@ -8,7 +8,6 @@ void matrix_scan_user(void) {
     SEQ_ONE_KEY(FR_S) { add_oneshot_mods(MOD_BIT(KC_LGUI)); } // sway mod key
     SEQ_ONE_KEY(FR_F) { SS(SS_CG("f")); } // free
     SEQ_ONE_KEY(FR_T) { SS(SS_CG("t")); } // terminal
-    SEQ_ONE_KEY(FR_E) { SS(SS_CG("e")); } // editor
     SEQ_ONE_KEY(FR_W) { SS(SS_CG("w")); } // web
     SEQ_ONE_KEY(FR_D) { SS(SS_CG("d")); } // voice (Discord)
     SEQ_ONE_KEY(FR_A) { SS(SS_CG("a")); } // game (Adventure)
@@ -16,7 +15,6 @@ void matrix_scan_user(void) {
     SEQ_TWO_KEYS(FR_T, FR_H) { SS(SS_CA(SS_TAP(X_F1))); } // tty 1
     SEQ_TWO_KEYS(FR_T, FR_S) { SS(SS_CA(SS_TAP(X_F2))); } // tty 2
     SEQ_TWO_KEYS(FR_T, FR_T) { SS(SS_CG( SS_DOWN(X_T) SS_DOWN(X_N) SS_UP(X_N) SS_UP(X_T) )); } // new terminal
-    SEQ_TWO_KEYS(FR_W, FR_W) { SS(SS_CG( SS_DOWN(X_W) SS_DOWN(X_N) SS_UP(X_N) SS_UP(X_W) )); } // new web
     SEQ_TWO_KEYS(FR_D, FR_D) { SS(SS_CG( SS_DOWN(X_D) SS_DOWN(X_N) SS_UP(X_N) SS_UP(X_D) )); } // new voice
 
     SEQ_THREE_KEYS(FR_W, FR_O, FR_W) { layer_move(_WST); } // wow layer
