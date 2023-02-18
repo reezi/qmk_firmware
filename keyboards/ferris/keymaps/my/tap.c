@@ -1,5 +1,8 @@
 #define TAP record->event.pressed && record->tap.count
 #define HOLD record->event.pressed
+#define RELEASE !record->event.pressed
+
+bool osm_flag_spcl = true; // flag enabling osm
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!process_custom_shift_keys(keycode, record)) { return false; }
@@ -22,7 +25,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
       case LT(0,C_SPCL):
         if (TAP) { tap_code16(KC_SPC); }
-        else if (HOLD) { add_oneshot_mods(MOD_BIT(KC_LCTL)); }
+        else if (HOLD) {
+          register_mods(MOD_BIT(KC_LCTL)); // normal control
+          osm_flag_spcl = true;
+        }
+        else if (RELEASE) {
+          unregister_mods(MOD_BIT(KC_LCTL)); // normal control
+          if (osm_flag_spcl) { add_oneshot_mods(MOD_BIT(KC_LCTL)); } // one-shot control if was pressed alone
+        }
         return false;
       case LT(0,C_ESC):
         if (TAP) { SS(SS_TAP(X_ESC)); }
@@ -77,3 +87,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     return true;
 };
+
+void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+      case LT(0,C_SPCL):
+        break;
+      default:
+        osm_flag_spcl = false;
+        break;
+    }
+}
