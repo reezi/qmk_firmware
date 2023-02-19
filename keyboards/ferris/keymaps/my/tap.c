@@ -12,12 +12,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         SS("qmk flash" SS_TAP(X_ENTER));
         reset_keyboard(); // QK_BOOTLOADER
       case LT(0,C_ZOOMD):
-        if (TAP) { SS(SS_C("-")); }
-        else if (HOLD) { SS(SS_C("-")); }
+        if (TAP) {
+          register_mods(MOD_BIT(KC_LCTL));
+          tap_code16(KC_KP_MINUS);
+          unregister_mods(MOD_BIT(KC_LCTL));
+        }
         return false;
       case LT(0,C_ZOOMU):
-        if (TAP) { SS(SS_C("+")); }
-        else if (HOLD) { SS(SS_C("+")); }
+        if (TAP) {
+          register_mods(MOD_BIT(KC_LCTL));
+          tap_code16(KC_KP_PLUS);
+          unregister_mods(MOD_BIT(KC_LCTL));
+        }
         return false;
       case LT(0,C_U):
         if (TAP) { SS("u"); }
