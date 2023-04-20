@@ -19,6 +19,7 @@ enum custom_keycodes {
 #define _EEE 1
 #define _SYM 2
 #define _SYS 3
+#define _FPS 9
 #define _WST 10
 #define _WMT 11
 
@@ -48,6 +49,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, KC_BRID, KC_VOLD, LT(0,C_ZOOMD), _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,
       _______, _______, _______, _______,       _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
       TO(_ABC), OS_LALT, OS_LSFT, _______
+  ),
+	[_FPS] = LAYOUT_split_3x5_2(
+      FR_B, FR_Y, FR_O, FR_U, FR_COMM, FR_DOT,  FR_L, FR_D, FR_W, FR_V,
+      FR_C, FR_I, FR_E, FR_A, FR_MINS, FR_COLN, FR_H, FR_T, FR_S, FR_N,
+      FR_G, FR_X, FR_J, FR_K, FR_Z,    FR_Q,    FR_R, FR_M, FR_F, FR_P,
+      KC_SPC, KC_LALT, _______, TO(_ABC)
   ),
 	[_WST] = LAYOUT_split_3x5_2(
       _______,  _______, _______, _______, _______,     _______, _______, _______, _______, _______,
