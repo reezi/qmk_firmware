@@ -5,13 +5,13 @@ bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode
 
   switch (combo_index) {
 
+    case COMBO_STD_TAB:
     case COMBO_STD_ESC:
     case COMBO_STD_BSPC:
     case COMBO_STD_DEL:
     case COMBO_STD_ENTER:
       return true;
 
-    case COMBO_STD_TAB:
     case COMBO_STD_CYBR:
     case COMBO_STD_PARE:
     case COMBO_STD_NMBR:
