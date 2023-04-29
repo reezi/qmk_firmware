@@ -33,8 +33,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       LT(0,C_SPCL), KC_LEAD, OS_LSFT, TO(_SYM)
   ),
 	[_EEE] = LAYOUT_split_3x5_2(
-      _______, _______, _______, _______, _______, _______, _______, _______, _______, C_FLASH,
-      FR_CCED, FR_EACU, FR_EGRV, FR_AGRV, _______, _______, FR_DIAE, FR_CIRC, FR_UGRV, _______,
+      _______, _______, _______, FR_UGRV, _______, _______, _______, _______, _______, C_FLASH,
+      FR_CCED, FR_EACU, FR_EGRV, FR_AGRV, _______, _______, FR_DIAE, FR_CIRC, _______, _______,
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
       TO(_ABC), _______, _______, _______
   ),
