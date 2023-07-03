@@ -22,7 +22,6 @@ bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode
       if (STD_LAYER) return true;
 
     case COMBO_WOW_JUMP:
-    case COMBO_WOW_GATE:
       if (WOW_LAYER) return true;
 
   }

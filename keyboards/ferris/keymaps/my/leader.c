@@ -16,13 +16,19 @@ void matrix_scan_user(void) {
 
     SEQ_TWO_KEYS(FR_T, FR_H) { SS(SS_CA(SS_TAP(X_F1))); } // tty 1
     SEQ_TWO_KEYS(FR_T, FR_S) { SS(SS_CA(SS_TAP(X_F2))); } // tty 2
-    SEQ_TWO_KEYS(FR_T, FR_T) { SS(SS_CG( SS_DOWN(X_T) SS_DOWN(X_N) SS_UP(X_N) SS_UP(X_T) )); } // new terminal
-    SEQ_TWO_KEYS(FR_O, FR_W) { layer_move(_FPS); } // overwatch is fps layer
+    SEQ_TWO_KEYS(FR_N, FR_T) { SS(SS_CG( SS_DOWN(X_T) SS_DOWN(X_N) SS_UP(X_N) SS_UP(X_T) )); } // new terminal
+    SEQ_TWO_KEYS(FR_O, FR_W) { layer_move(_FPS); } // fps layer
+    SEQ_TWO_KEYS(FR_W, FR_O) { layer_move(_WST); } // mmo layer
+    SEQ_TWO_KEYS(FR_F, FR_F) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_F) SS_UP(X_F) SS_UP(X_M) )); } // free
+    SEQ_TWO_KEYS(FR_O, FR_O) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_O) SS_UP(X_O) SS_UP(X_M) )); } // obsi
+    SEQ_TWO_KEYS(FR_T, FR_T) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_T) SS_UP(X_T) SS_UP(X_M) )); } // term
+    SEQ_TWO_KEYS(FR_W, FR_W) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_W) SS_UP(X_W) SS_UP(X_M) )); } // web
+    SEQ_TWO_KEYS(FR_D, FR_D) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_D) SS_UP(X_D) SS_UP(X_M) )); } // didi
+    SEQ_TWO_KEYS(FR_G, FR_G) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_G) SS_UP(X_G) SS_UP(X_M) )); } // game
 
-    SEQ_THREE_KEYS(FR_W, FR_O, FR_W) { layer_move(_WST); } // wow layer
     SEQ_THREE_KEYS(FR_S, FR_S, FR_R) { SS(SS_CG( SS_DOWN(X_S) SS_DOWN(X_R) SS_UP(X_R) SS_UP(X_S) )); } // sway reload
     SEQ_THREE_KEYS(FR_S, FR_S, FR_K) { SS(SS_CG( SS_DOWN(X_S) SS_DOWN(X_K) SS_UP(X_K) SS_UP(X_S) )); } // sway kill
-    SEQ_THREE_KEYS(FR_H, FR_U, FR_D) { SS(SS_C(SS_RSFT(SS_TAP(X_F12)))); } // mango toggle
+    SEQ_THREE_KEYS(FR_H, FR_U, FR_D) { SS(SS_C(SS_RSFT(SS_TAP(X_F12)))); } // mangohud toggle
 
     SEQ_FOUR_KEYS(FR_T, FR_T, FR_Y, FR_B) { SS(SS_CA(SS_TAP(X_F1))); } // tty 1
     SEQ_FOUR_KEYS(FR_T, FR_T, FR_Y, FR_Y) { SS(SS_CA(SS_TAP(X_F2))); } // tty 2
