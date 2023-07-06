@@ -90,6 +90,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (TAP) { tap_code16(FR_CIRC); }
         else if (HOLD) { tap_code16(FR_CIRC); tap_code16(KC_SPC); }
         return false;
+      // top row
+      case LT(0,C_AB): if (TAP) { (get_mods() & MOD_BIT(KC_LCTL)) ? tap_code16(C(FR_B)) : tap_code16(A(FR_B)); } return false;
+      case LT(0,C_AY): if (TAP) { (get_mods() & MOD_BIT(KC_LCTL)) ? tap_code16(C(FR_Y)) : tap_code16(A(FR_Y)); } return false;
+      // o u comm
+      // middle row
+      case LT(0,C_AMINS): if (TAP) { (get_mods() & MOD_BIT(KC_LCTL)) ? tap_code16(C(FR_MINS)) : tap_code16(A(FR_MINS)); } return false;
+      // bottom row
+      // g x k z
     }
     return true;
 };
