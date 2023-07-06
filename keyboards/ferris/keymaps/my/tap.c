@@ -93,11 +93,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       // top row
       case LT(0,C_AB): if (TAP) { (get_mods() & MOD_BIT(KC_LCTL)) ? tap_code16(C(FR_B)) : tap_code16(A(FR_B)); } return false;
       case LT(0,C_AY): if (TAP) { (get_mods() & MOD_BIT(KC_LCTL)) ? tap_code16(C(FR_Y)) : tap_code16(A(FR_Y)); } return false;
-      // o u comm
+      case LT(0,C_AO): if (TAP) { (get_mods() & MOD_BIT(KC_LCTL)) ? tap_code16(C(FR_O)) : tap_code16(A(FR_O)); } return false;
+      case LT(0,C_AU): if (TAP) { (get_mods() & MOD_BIT(KC_LCTL)) ? tap_code16(C(FR_U)) : tap_code16(A(FR_U)); } return false;
+      case LT(0,C_ACOMM): if (TAP) { (get_mods() & MOD_BIT(KC_LCTL)) ? tap_code16(C(FR_COMM)) : tap_code16(A(FR_COMM)); } return false;
       // middle row
       case LT(0,C_AMINS): if (TAP) { (get_mods() & MOD_BIT(KC_LCTL)) ? tap_code16(C(FR_MINS)) : tap_code16(A(FR_MINS)); } return false;
       // bottom row
-      // g x k z
+      case LT(0,C_AG): if (TAP) { (get_mods() & MOD_BIT(KC_LCTL)) ? tap_code16(C(FR_G)) : tap_code16(A(FR_G)); } return false;
+      case LT(0,C_AX): if (TAP) { (get_mods() & MOD_BIT(KC_LCTL)) ? tap_code16(C(FR_X)) : tap_code16(A(FR_X)); } return false;
+      case LT(0,C_AK): if (TAP) { (get_mods() & MOD_BIT(KC_LCTL)) ? tap_code16(C(FR_K)) : tap_code16(A(FR_K)); } return false;
+      case LT(0,C_AZ): if (TAP) { (get_mods() & MOD_BIT(KC_LCTL)) ? tap_code16(C(FR_Z)) : tap_code16(A(FR_Z)); } return false;
     }
     return true;
 };
