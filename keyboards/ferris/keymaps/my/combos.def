@@ -1,7 +1,5 @@
 // name, result, chord
 
-// ------------------- abc
-
 COMB(COMBO_STD_TAB, KC_TAB, FR_I, FR_E, FR_A)
 COMB(COMBO_STD_ESC, LT(0,C_ESC), FR_X, FR_J, FR_K)
 COMB(COMBO_STD_CYBR, LT(0,C_CYBR), FR_I, FR_Y)
@@ -16,10 +14,3 @@ COMB(COMBO_STD_ENTER, KC_ENTER, FR_R, FR_M, FR_F)
 COMB(COMBO_STD_SQUO, LT(0,C_SQUO), FR_H, FR_L)
 COMB(COMBO_STD_DQUO, LT(0,C_DQUO), FR_T, FR_D)
 COMB(COMBO_STD_TILD, LT(0,C_TILD), FR_S, FR_W)
-
-
-
-// ------------------- wow
-
-COMB(COMBO_WOW_JUMP, KC_SPC, FR_I, FR_A)
-

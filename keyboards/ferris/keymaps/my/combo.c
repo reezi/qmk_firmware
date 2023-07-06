@@ -21,9 +21,6 @@ bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode
     case COMBO_STD_TILD:
       if (STD_LAYER) return true;
 
-    case COMBO_WOW_JUMP:
-      if (WOW_LAYER) return true;
-
   }
   return false;
 }
