@@ -34,5 +34,4 @@ void leader_end_user(void) {
     else if (leader_sequence_four_keys(FR_T, FR_T, FR_Y, FR_D)) { SS(SS_CA(SS_TAP(X_F6))); } // tty 6
     else if (leader_sequence_four_keys(FR_T, FR_T, FR_Y, FR_W)) { SS(SS_CA(SS_TAP(X_F7))); } // tty 7
 
-  }
 }
