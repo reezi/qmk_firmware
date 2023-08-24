@@ -49,7 +49,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         else if (HOLD) { SS(SS_TAP(X_ESC) ":"); }
         return false;
       case LT(0,C_ANBR):
-        if (TAP) { SS("<"); }
+        if (TAP) { SS(">"); }
         else if (HOLD) { SS("<>" SS_TAP(X_LEFT)); }
         return false;
       case LT(0,C_CYBR):
