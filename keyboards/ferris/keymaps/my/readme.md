@@ -28,6 +28,8 @@ solder 0.6mm no lead | amazon
 # firmware
 
 ```sh
+git remote add upstream https://github.com/qmk/qmk_firmware.git
+
 qmk compile
 ls ~/keeb/qmkfw/.build
 
