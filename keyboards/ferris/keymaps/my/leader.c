@@ -1,43 +1,38 @@
-LEADER_EXTERNS();
+void leader_end_user(void) {
 
-void matrix_scan_user(void) {
-  LEADER_DICTIONARY() {
-    leading = false;
-    leader_end();
+    if (leader_sequence_one_key(FR_S)) { add_oneshot_mods(MOD_BIT(KC_LGUI)); } // sway mod key
+    else if (leader_sequence_one_key(FR_M)) { SS(SS_CG("m")); } // menu
+    else if (leader_sequence_one_key(FR_F)) { SS(SS_CG("f")); } // free
+    else if (leader_sequence_one_key(FR_O)) { SS(SS_CG("o")); } // obsi
+    else if (leader_sequence_one_key(FR_T)) { SS(SS_CG("t")); } // term
+    else if (leader_sequence_one_key(FR_W)) { SS(SS_CG("w")); } // web
+    else if (leader_sequence_one_key(FR_D)) { SS(SS_CG("d")); } // didi
+    else if (leader_sequence_one_key(FR_G)) { SS(SS_CG("g")); } // game
 
-    SEQ_ONE_KEY(FR_S) { add_oneshot_mods(MOD_BIT(KC_LGUI)); } // sway mod key
-    SEQ_ONE_KEY(FR_M) { SS(SS_CG("m")); } // menu
-    SEQ_ONE_KEY(FR_F) { SS(SS_CG("f")); } // free
-    SEQ_ONE_KEY(FR_O) { SS(SS_CG("o")); } // obsi
-    SEQ_ONE_KEY(FR_T) { SS(SS_CG("t")); } // term
-    SEQ_ONE_KEY(FR_W) { SS(SS_CG("w")); } // web
-    SEQ_ONE_KEY(FR_D) { SS(SS_CG("d")); } // didi
-    SEQ_ONE_KEY(FR_G) { SS(SS_CG("g")); } // game
+    else if (leader_sequence_two_keys(FR_T, FR_H)) { SS(SS_CA(SS_TAP(X_F1))); } // tty 1
+    else if (leader_sequence_two_keys(FR_T, FR_S)) { SS(SS_CA(SS_TAP(X_F2))); } // tty 2
+    else if (leader_sequence_two_keys(FR_N, FR_T)) { SS(SS_CG( SS_DOWN(X_T) SS_DOWN(X_N) SS_UP(X_N) SS_UP(X_T) )); } // new terminal
+    else if (leader_sequence_two_keys(FR_O, FR_W)) { layer_move(_FPS); } // fps layer
+    else if (leader_sequence_two_keys(FR_W, FR_O)) { layer_move(_WST); } // mmo layer
+    else if (leader_sequence_two_keys(FR_P, FR_O)) { layer_move(_POE); } // poe layer
+    else if (leader_sequence_two_keys(FR_F, FR_F)) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_F) SS_UP(X_F) SS_UP(X_M) )); } // free
+    else if (leader_sequence_two_keys(FR_O, FR_O)) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_O) SS_UP(X_O) SS_UP(X_M) )); } // obsi
+    else if (leader_sequence_two_keys(FR_T, FR_T)) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_T) SS_UP(X_T) SS_UP(X_M) )); } // term
+    else if (leader_sequence_two_keys(FR_W, FR_W)) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_W) SS_UP(X_W) SS_UP(X_M) )); } // web
+    else if (leader_sequence_two_keys(FR_D, FR_D)) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_D) SS_UP(X_D) SS_UP(X_M) )); } // didi
+    else if (leader_sequence_two_keys(FR_G, FR_G)) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_G) SS_UP(X_G) SS_UP(X_M) )); } // game
 
-    SEQ_TWO_KEYS(FR_T, FR_H) { SS(SS_CA(SS_TAP(X_F1))); } // tty 1
-    SEQ_TWO_KEYS(FR_T, FR_S) { SS(SS_CA(SS_TAP(X_F2))); } // tty 2
-    SEQ_TWO_KEYS(FR_N, FR_T) { SS(SS_CG( SS_DOWN(X_T) SS_DOWN(X_N) SS_UP(X_N) SS_UP(X_T) )); } // new terminal
-    SEQ_TWO_KEYS(FR_O, FR_W) { layer_move(_FPS); } // fps layer
-    SEQ_TWO_KEYS(FR_W, FR_O) { layer_move(_WST); } // mmo layer
-    SEQ_TWO_KEYS(FR_P, FR_O) { layer_move(_POE); } // poe layer
-    SEQ_TWO_KEYS(FR_F, FR_F) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_F) SS_UP(X_F) SS_UP(X_M) )); } // free
-    SEQ_TWO_KEYS(FR_O, FR_O) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_O) SS_UP(X_O) SS_UP(X_M) )); } // obsi
-    SEQ_TWO_KEYS(FR_T, FR_T) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_T) SS_UP(X_T) SS_UP(X_M) )); } // term
-    SEQ_TWO_KEYS(FR_W, FR_W) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_W) SS_UP(X_W) SS_UP(X_M) )); } // web
-    SEQ_TWO_KEYS(FR_D, FR_D) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_D) SS_UP(X_D) SS_UP(X_M) )); } // didi
-    SEQ_TWO_KEYS(FR_G, FR_G) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_G) SS_UP(X_G) SS_UP(X_M) )); } // game
+    else if (leader_sequence_three_keys(FR_S, FR_S, FR_R)) { SS(SS_CG( SS_DOWN(X_S) SS_DOWN(X_R) SS_UP(X_R) SS_UP(X_S) )); } // sway reload
+    else if (leader_sequence_three_keys(FR_S, FR_S, FR_K)) { SS(SS_CG( SS_DOWN(X_S) SS_DOWN(X_K) SS_UP(X_K) SS_UP(X_S) )); } // sway kill
+    else if (leader_sequence_three_keys(FR_H, FR_U, FR_D)) { SS(SS_C(SS_RSFT(SS_TAP(X_F12)))); } // mangohud toggle
 
-    SEQ_THREE_KEYS(FR_S, FR_S, FR_R) { SS(SS_CG( SS_DOWN(X_S) SS_DOWN(X_R) SS_UP(X_R) SS_UP(X_S) )); } // sway reload
-    SEQ_THREE_KEYS(FR_S, FR_S, FR_K) { SS(SS_CG( SS_DOWN(X_S) SS_DOWN(X_K) SS_UP(X_K) SS_UP(X_S) )); } // sway kill
-    SEQ_THREE_KEYS(FR_H, FR_U, FR_D) { SS(SS_C(SS_RSFT(SS_TAP(X_F12)))); } // mangohud toggle
-
-    SEQ_FOUR_KEYS(FR_T, FR_T, FR_Y, FR_B) { SS(SS_CA(SS_TAP(X_F1))); } // tty 1
-    SEQ_FOUR_KEYS(FR_T, FR_T, FR_Y, FR_Y) { SS(SS_CA(SS_TAP(X_F2))); } // tty 2
-    SEQ_FOUR_KEYS(FR_T, FR_T, FR_Y, FR_O) { SS(SS_CA(SS_TAP(X_F3))); } // tty 3
-    SEQ_FOUR_KEYS(FR_T, FR_T, FR_Y, FR_U) { SS(SS_CA(SS_TAP(X_F4))); } // tty 4
-    SEQ_FOUR_KEYS(FR_T, FR_T, FR_Y, FR_L) { SS(SS_CA(SS_TAP(X_F5))); } // tty 5
-    SEQ_FOUR_KEYS(FR_T, FR_T, FR_Y, FR_D) { SS(SS_CA(SS_TAP(X_F6))); } // tty 6
-    SEQ_FOUR_KEYS(FR_T, FR_T, FR_Y, FR_W) { SS(SS_CA(SS_TAP(X_F7))); } // tty 7
+    else if (leader_sequence_four_keys(FR_T, FR_T, FR_Y, FR_B)) { SS(SS_CA(SS_TAP(X_F1))); } // tty 1
+    else if (leader_sequence_four_keys(FR_T, FR_T, FR_Y, FR_Y)) { SS(SS_CA(SS_TAP(X_F2))); } // tty 2
+    else if (leader_sequence_four_keys(FR_T, FR_T, FR_Y, FR_O)) { SS(SS_CA(SS_TAP(X_F3))); } // tty 3
+    else if (leader_sequence_four_keys(FR_T, FR_T, FR_Y, FR_U)) { SS(SS_CA(SS_TAP(X_F4))); } // tty 4
+    else if (leader_sequence_four_keys(FR_T, FR_T, FR_Y, FR_L)) { SS(SS_CA(SS_TAP(X_F5))); } // tty 5
+    else if (leader_sequence_four_keys(FR_T, FR_T, FR_Y, FR_D)) { SS(SS_CA(SS_TAP(X_F6))); } // tty 6
+    else if (leader_sequence_four_keys(FR_T, FR_T, FR_Y, FR_W)) { SS(SS_CA(SS_TAP(X_F7))); } // tty 7
 
   }
 }
