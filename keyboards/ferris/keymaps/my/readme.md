@@ -25,10 +25,24 @@ soldering mat | amazon
 solder 0.3mm no lead | amazon
 solder 0.6mm no lead | amazon
 
-# firmware
+# upstream
 
 ```sh
 git remote add upstream https://github.com/qmk/qmk_firmware.git
+
+git switch master
+git pull upstream master
+git push origin master
+
+git switch dev
+git merge --no-ff master
+git push origin dev
+```
+
+# firmware
+
+```sh
+qmk doctor
 
 qmk compile
 ls ~/keeb/qmkfw/.build
