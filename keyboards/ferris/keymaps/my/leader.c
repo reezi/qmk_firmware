@@ -19,6 +19,7 @@ void matrix_scan_user(void) {
     SEQ_TWO_KEYS(FR_N, FR_T) { SS(SS_CG( SS_DOWN(X_T) SS_DOWN(X_N) SS_UP(X_N) SS_UP(X_T) )); } // new terminal
     SEQ_TWO_KEYS(FR_O, FR_W) { layer_move(_FPS); } // fps layer
     SEQ_TWO_KEYS(FR_W, FR_O) { layer_move(_WST); } // mmo layer
+    SEQ_TWO_KEYS(FR_P, FR_O) { layer_move(_POE); } // poe layer
     SEQ_TWO_KEYS(FR_F, FR_F) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_F) SS_UP(X_F) SS_UP(X_M) )); } // free
     SEQ_TWO_KEYS(FR_O, FR_O) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_O) SS_UP(X_O) SS_UP(X_M) )); } // obsi
     SEQ_TWO_KEYS(FR_T, FR_T) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_T) SS_UP(X_T) SS_UP(X_M) )); } // term

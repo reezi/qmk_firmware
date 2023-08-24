@@ -23,6 +23,7 @@ enum custom_keycodes {
 #define _FPS 9
 #define _WST 10
 #define _WMT 11
+#define _POE 12
 
 #include "g/keymap_combo.h"
 
@@ -68,6 +69,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       TO(_WST),   FR_I,       FR_E,       FR_A,       LT(0,C_AMINS), FR_COLN, FR_H, FR_T, FR_S, FR_N,
       LT(0,C_AG), LT(0,C_AX), FR_J,       LT(0,C_AK), LT(0,C_AZ),    FR_Q,    FR_R, FR_M, FR_F, FR_P,
       KC_SPC, KC_LCTL, _______, TO(_SYS)
+  ),
+	[_POE] = LAYOUT_split_3x5_2(
+      FR_B, FR_Y, FR_O, FR_U, FR_COMM, FR_DOT,  FR_L, FR_D, FR_W, FR_V,
+      FR_C, FR_I, FR_E, FR_A, FR_MINS, FR_COLN, FR_H, FR_T, FR_S, FR_N,
+      FR_G, FR_X, FR_J, FR_K, KC_LSFT, FR_Q,    FR_R, FR_M, FR_F, FR_P,
+      KC_SPC, KC_LCTL, KC_LALT, TO(_SYS)
   ),
 };
 
