@@ -31,10 +31,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
       case LT(0,C_SPCL):
         if (TAP) { tap_code16(KC_SPC); }
-        else if (HOLD) { set_oneshot_mods(MOD_BIT(KC_LCTL)); }
-        return false;
-      case LT(0,C_SPCL):
-        if (TAP) { tap_code16(KC_SPC); }
         else if (HOLD) {
           register_mods(MOD_BIT(KC_LCTL)); // normal control
           osm_flag_spcl = true;
