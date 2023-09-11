@@ -9,6 +9,7 @@ enum custom_keycodes {
     C_SPCL, C_ESC,
     C_TILD, C_CIRC,
     C_SQUO, C_DQUO, C_BQUO,
+    C_PS0, C_PS1,
     C_ANBR, C_CYBR, C_NMBR, C_PARE,
     C_ZOOMD, C_ZOOMU,
     C_AB, C_AY, C_AO, C_AU, C_ACOMM, C_AMINS, C_AG, C_AX, C_AK, C_AZ,
@@ -47,9 +48,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       TO(_ABC), _______, OS_LSFT, TO(_SYS)
   ),
 	[_SYS] = LAYOUT_split_3x5_2(
-      KC_PSCR, KC_BRIU, KC_VOLU, LT(0,C_ZOOMU), _______, _______, _______, _______, _______, KC_NUM_LOCK,
-      _______, KC_BRID, KC_VOLD, LT(0,C_ZOOMD), _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,
-      _______, _______, _______, _______,       _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
+      LT(0,C_PS1), KC_BRIU, KC_VOLU, LT(0,C_ZOOMU), _______, _______, _______, _______, _______, KC_NUM_LOCK,
+      LT(0,C_PS0), KC_BRID, KC_VOLD, LT(0,C_ZOOMD), _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,
+      _______,     _______, _______, _______,       _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
       TO(_ABC), OS_LALT, OS_LSFT, _______
   ),
 	[_FPS] = LAYOUT_split_3x5_2(
