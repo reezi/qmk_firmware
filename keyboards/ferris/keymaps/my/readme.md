@@ -45,7 +45,7 @@ git push origin dev
 qmk doctor
 
 qmk compile
-ls ~/keeb/qmkfw/.build
+ls ~/qmk_firmware/.build
 
 # from root of qmk repo
 make ferris/sweep:my:dfu-split-left
