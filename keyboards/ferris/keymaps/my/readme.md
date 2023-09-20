@@ -47,9 +47,10 @@ qmk doctor
 qmk compile
 ls ~/qmk_firmware/.build
 
-# from root of qmk repo
+# first flash, from root of qmk repo
 make ferris/sweep:my:dfu-split-left
 make ferris/sweep:my:dfu-split-right
 
+# subsequent flashes, from here
 qmk flash
 ```
