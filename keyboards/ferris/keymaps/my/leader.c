@@ -8,7 +8,7 @@ void leader_end_user(void) {
     else if (leader_sequence_one_key(FR_W)) { SS(SS_CG("w")); } // web
     else if (leader_sequence_one_key(FR_D)) { SS(SS_CG("d")); } // didi
     else if (leader_sequence_one_key(FR_G)) { SS(SS_CG("g")); } // game
-    else if (leader_sequence_one_key(FR_G)) { SS(SS_CG("b")); } // stream
+    else if (leader_sequence_one_key(FR_B)) { SS(SS_CG("b")); } // stream
 
     else if (leader_sequence_two_keys(FR_T, FR_H)) { SS(SS_CA(SS_TAP(X_F1))); } // tty 1
     else if (leader_sequence_two_keys(FR_T, FR_S)) { SS(SS_CA(SS_TAP(X_F2))); } // tty 2
