@@ -16,13 +16,13 @@ void leader_end_user(void) {
     else if (leader_sequence_two_keys(FR_O, FR_W)) { layer_move(_FPS); } // fps layer
     else if (leader_sequence_two_keys(FR_W, FR_O)) { layer_move(_WST); } // mmo layer
     else if (leader_sequence_two_keys(FR_P, FR_O)) { layer_move(_POE); } // poe layer
-    else if (leader_sequence_two_keys(FR_F, FR_F)) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_F) SS_UP(X_F) SS_UP(X_M) )); } // free
-    else if (leader_sequence_two_keys(FR_O, FR_O)) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_O) SS_UP(X_O) SS_UP(X_M) )); } // obsi
-    else if (leader_sequence_two_keys(FR_T, FR_T)) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_T) SS_UP(X_T) SS_UP(X_M) )); } // term
-    else if (leader_sequence_two_keys(FR_W, FR_W)) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_W) SS_UP(X_W) SS_UP(X_M) )); } // web
-    else if (leader_sequence_two_keys(FR_D, FR_D)) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_D) SS_UP(X_D) SS_UP(X_M) )); } // didi
-    else if (leader_sequence_two_keys(FR_G, FR_G)) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_G) SS_UP(X_G) SS_UP(X_M) )); } // game
-    else if (leader_sequence_two_keys(FR_G, FR_B)) { SS(SS_CG( SS_DOWN(X_M) SS_DOWN(X_B) SS_UP(X_B) SS_UP(X_M) )); } // stream
+    else if (leader_sequence_two_keys(FR_F, FR_F)) { SS(SS_CGS("f")); } // move to free
+    else if (leader_sequence_two_keys(FR_O, FR_O)) { SS(SS_CGS("o")); } // move to obsi
+    else if (leader_sequence_two_keys(FR_T, FR_T)) { SS(SS_CGS("t")); } // move to term
+    else if (leader_sequence_two_keys(FR_W, FR_W)) { SS(SS_CGS("w")); } // move to web
+    else if (leader_sequence_two_keys(FR_D, FR_D)) { SS(SS_CGS("d")); } // move to didi
+    else if (leader_sequence_two_keys(FR_G, FR_G)) { SS(SS_CGS("g")); } // move to game
+    else if (leader_sequence_two_keys(FR_B, FR_B)) { SS(SS_CGS("b")); } // move to stream
 
     else if (leader_sequence_three_keys(FR_S, FR_S, FR_R)) { SS(SS_CG( SS_DOWN(X_S) SS_DOWN(X_R) SS_UP(X_R) SS_UP(X_S) )); } // sway reload
     else if (leader_sequence_three_keys(FR_S, FR_S, FR_K)) { SS(SS_CG( SS_DOWN(X_S) SS_DOWN(X_K) SS_UP(X_K) SS_UP(X_S) )); } // sway kill
