@@ -9,6 +9,7 @@ void leader_end_user(void) {
     else if (leader_sequence_one_key(FR_D)) { SS(SS_CG("d")); } // didi
     else if (leader_sequence_one_key(FR_G)) { SS(SS_CG("g")); } // game
     else if (leader_sequence_one_key(FR_B)) { SS(SS_CG("b")); } // stream
+    else if (leader_sequence_one_key(FR_C)) { SS(SS_CG("c")); } // code
 
     else if (leader_sequence_two_keys(FR_T, FR_H)) { SS(SS_CA(SS_TAP(X_F1))); } // tty 1
     else if (leader_sequence_two_keys(FR_T, FR_S)) { SS(SS_CA(SS_TAP(X_F2))); } // tty 2
@@ -23,6 +24,7 @@ void leader_end_user(void) {
     else if (leader_sequence_two_keys(FR_D, FR_D)) { SS(SS_CGS("d")); } // move to didi
     else if (leader_sequence_two_keys(FR_G, FR_G)) { SS(SS_CGS("g")); } // move to game
     else if (leader_sequence_two_keys(FR_B, FR_B)) { SS(SS_CGS("b")); } // move to stream
+    else if (leader_sequence_two_keys(FR_C, FR_C)) { SS(SS_CGS("c")); } // move to code
 
     else if (leader_sequence_three_keys(FR_S, FR_S, FR_R)) { SS(SS_CG( SS_DOWN(X_S) SS_DOWN(X_R) SS_UP(X_R) SS_UP(X_S) )); } // sway reload
     else if (leader_sequence_three_keys(FR_S, FR_S, FR_K)) { SS(SS_CG( SS_DOWN(X_S) SS_DOWN(X_K) SS_UP(X_K) SS_UP(X_S) )); } // sway kill
