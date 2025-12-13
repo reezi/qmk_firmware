@@ -18,6 +18,7 @@ void leader_end_user(void) {
     else if (leader_sequence_two_keys(FR_W, FR_O)) { layer_move(_WST); } // mmo layer
     else if (leader_sequence_two_keys(FR_P, FR_O)) { layer_move(_POE); } // poe layer
     else if (leader_sequence_two_keys(FR_B, FR_P)) { layer_move(_BPSR); } // blue protocol star resonance layer
+    else if (leader_sequence_two_keys(FR_T, FR_P)) { layer_move(_TPT); } // the perfect tower layer
     else if (leader_sequence_two_keys(FR_F, FR_F)) { SS(SS_CGS("f")); } // move to free
     else if (leader_sequence_two_keys(FR_O, FR_O)) { SS(SS_CGS("o")); } // move to obsi
     else if (leader_sequence_two_keys(FR_T, FR_T)) { SS(SS_CGS("t")); } // move to term
