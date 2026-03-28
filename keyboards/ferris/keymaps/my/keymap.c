@@ -63,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 	[_WST] = LAYOUT_split_3x5_2(
       FR_B,     FR_Y, FR_O, FR_U, FR_COMM, FR_DOT,  FR_L, FR_D, FR_W, FR_V,
-      FR_C,     FR_I, FR_E, FR_A, FR_MINS, FR_COLN, FR_H, FR_T, FR_S, FR_N,
+      TO(_WMT), FR_I, FR_E, FR_A, FR_MINS, FR_COLN, FR_H, FR_T, FR_S, FR_N,
       FR_G,     FR_X, FR_J, FR_K, FR_Z,    FR_Q,    FR_R, FR_M, FR_F, FR_P,
       KC_SPC, KC_LSFT, _______, TO(_SYS)
   ),
@@ -86,9 +86,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       FR_F, KC_LALT, _______, TO(_ABC)
   ),
     [_TPT] = LAYOUT_split_3x5_2(
-      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+      _______, KC_F2, _______, _______, _______, _______, _______, _______, _______, _______,
       FR_C, FR_A, FR_W, FR_D, _______, _______, _______, _______, _______, _______,
-      _______, _______, FR_S, _______, _______, _______, _______, _______, _______, _______,
+      _______, _______, FR_S, _______, _______, _______, FR_R, _______, _______, FR_P,
       KC_SPC, _______, _______, TO(_ABC)
   ),
 };
